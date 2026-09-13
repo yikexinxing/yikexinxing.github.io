@@ -1,4 +1,4 @@
-# yikexinxing · 一颗星星个人博客
+# yikexinxing · yikexinxing
 
 这是一个零依赖的静态个人博客首页，适合直接学习、修改和部署。
 
