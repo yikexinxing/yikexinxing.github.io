@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>关于 · 一颗新星</title>
+  <title>关于 · 一颗新星 CYBER BLOG</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
+
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="status-dot"></span>
+    <span class="sys-version">NEWSTAR_OS v2.0</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/ABOUT</span>
+  </div>
+  <div class="top-bar-right">
+    <span class="sys-signal">SIG ▮▮▯▯</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
 
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
     <span class="brand-name">一颗新星</span>
   </a>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    ABOUT / ONLINE
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
     <li><a href="blog.html">博客</a></li>
@@ -33,14 +45,16 @@
     <li><a href="resume.html">简历</a></li>
     <li><a href="links.html">友链</a></li>
     <li><a href="tools.html">工具</a></li>
-    <li><a href="about.html">关于</a></li>
+    <li><a href="about.html" class="active">关于</a></li>
   </ul>
 </nav>
 
 <main class="page-content">
-  <div class="eyebrow">06 // ABOUT</div>
-  <h1 class="page-title">关于<span>我</span></h1>
-  <p class="page-subtitle">你好，我是一颗新星。</p>
+  <div class="page-head">
+    <div class="section-tag">06 // ABOUT</div>
+    <h1 class="page-title">关于<span>我</span></h1>
+    <p class="page-subtitle">你好，我是一颗新星。</p>
+  </div>
 
   <div class="terminal-box">
     <p><span class="green">&gt;</span> system.user</p>
@@ -50,20 +64,39 @@
     <p><span class="green">&gt;</span> status: learning</p>
   </div>
 
-  <div class="about-preview-copy">
-    <p>软件工程专业学生，目前主要学习 C 语言和 Java。</p>
-    <p>这个博客不会追求“看起来很厉害”，而是想真实记录学习、写项目、踩坑、解决问题和生活中的一些瞬间。</p>
-    <p>我相信持续学习的力量，也相信把过程记录下来，本身就是一种成长。</p>
+  <div class="article-list">
+    <div class="article-card" style="cursor: default;">
+      <div class="article-meta-top">
+        <span class="article-tag">[ PROFILE ]</span>
+        <span class="article-date">whoami</span>
+      </div>
+      <h3>软件工程专业学生</h3>
+      <p>目前主要学习 C 语言和 Java，也在探索前端。这个博客不会追求“看起来很厉害”，而是想真实记录学习、写项目、踩坑、解决问题和生活中的一些瞬间。</p>
+      <div class="article-link">&gt; status: learning</div>
+    </div>
+    <div class="article-card" style="cursor: default;">
+      <div class="article-meta-top">
+        <span class="article-tag">[ PHILOSOPHY ]</span>
+        <span class="article-date">belief</span>
+      </div>
+      <h3>把过程记录下来，本身就是成长</h3>
+      <p>不需要每天都很厉害，但要每天都在前进。我相信持续学习的力量，也相信记录能让每一步都算数。</p>
+      <div class="article-link">&gt; keep building</div>
+    </div>
   </div>
 
-  <div class="section-head" style="margin-top: 60px;">
-    <h2>联系方式</h2>
-  </div>
-  <div class="chips">
-    <span>GitHub</span>
-    <span>Email</span>
-    <span>微信公众号</span>
-    <span>掘金</span>
+  <div class="info-section">
+    <div class="info-head">
+      <span class="info-index">§ 01</span>
+      <h2>联系方式 / CONTACT</h2>
+      <span class="info-code">// available</span>
+    </div>
+    <div class="chips">
+      <span>GitHub</span>
+      <span>Email</span>
+      <span>微信公众号</span>
+      <span>掘金</span>
+    </div>
   </div>
 </main>
 
@@ -73,6 +106,15 @@
   </div>
   <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
+
+<script>
+  function updateTime() {
+    var now = new Date();
+    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
 </body>
 </html>

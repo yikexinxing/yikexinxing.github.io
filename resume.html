@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>简历 · 一颗新星</title>
+  <title>简历 · 一颗新星 CYBER BLOG</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
+
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="status-dot"></span>
+    <span class="sys-version">NEWSTAR_OS v2.0</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/RESUME</span>
+  </div>
+  <div class="top-bar-right">
+    <span class="sys-signal">SIG ▮▮▯▯</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
 
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
     <span class="brand-name">一颗新星</span>
   </a>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    RESUME / ONLINE
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
     <li><a href="blog.html">博客</a></li>
@@ -30,7 +42,7 @@
         <li><a href="life.html"><span class="dropdown-icon">◇</span>日常生活记录</a></li>
       </ul>
     </li>
-    <li><a href="resume.html">简历</a></li>
+    <li><a href="resume.html" class="active">简历</a></li>
     <li><a href="links.html">友链</a></li>
     <li><a href="tools.html">工具</a></li>
     <li><a href="about.html">关于</a></li>
@@ -38,60 +50,106 @@
 </nav>
 
 <main class="page-content">
-  <div class="eyebrow">03 // RESUME</div>
-  <h1 class="page-title">我的<span>简历</span></h1>
-  <p class="page-subtitle">学习经历、技能栈、项目经历与未来方向。</p>
+  <div class="page-head">
+    <div class="section-tag">03 // RESUME</div>
+    <h1 class="page-title">我的<span>简历</span></h1>
+    <p class="page-subtitle">学习经历、技能栈、项目经历与未来方向。</p>
+  </div>
 
   <div class="terminal-box">
-    <p><span class="green">&gt;</span> name: 一颗新星</p>
-    <p><span class="green">&gt;</span> major: 软件工程</p>
-    <p><span class="green">&gt;</span> status: 大二在读</p>
-    <p><span class="green">&gt;</span> direction: Java 后端 / 全栈开发</p>
+    <p><span class="green">&gt;</span> cat profile.json</p>
+    <p><span class="label">name</span>: 一颗新星</p>
+    <p><span class="label">major</span>: 软件工程</p>
+    <p><span class="label">status</span>: 大二在读</p>
+    <p><span class="label">direction</span>: Java 后端 / 全栈开发</p>
   </div>
 
-  <div class="section-head">
-    <h2>技能栈</h2>
-  </div>
-  <div class="chips">
-    <span>Java</span>
-    <span>C 语言</span>
-    <span>HTML / CSS</span>
-    <span>JavaScript</span>
-    <span>MySQL</span>
-    <span>Git</span>
-    <span>Linux</span>
-    <span>数据结构</span>
-    <span>算法</span>
-    <span>Spring Boot</span>
-  </div>
-
-  <div class="section-head" style="margin-top: 60px;">
-    <h2>教育经历</h2>
-  </div>
-  <div class="activity-list">
-    <div class="activity-item">
-      <time>2025 - 至今</time>
-      <div>
-        <div class="activity-type">UNIVERSITY</div>
-        <h3>软件工程 · 本科</h3>
-        <p>主修课程：C 语言、Java、数据结构、离散数学、计算机组成原理。</p>
+  <!-- 技能栈 -->
+  <div class="info-section">
+    <div class="info-head">
+      <span class="info-index">§ 01</span>
+      <h2>技能栈 / SKILLS</h2>
+      <span class="info-code">// self-assessment</span>
+    </div>
+    <div class="skill-bars">
+      <div class="skill-row">
+        <div class="skill-name"><span>JAVA</span><b>75%</b></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
       </div>
-      <span class="activity-arrow">→</span>
+      <div class="skill-row">
+        <div class="skill-name"><span>C 语言</span><b>65%</b></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 65%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name"><span>HTML / CSS</span><b>70%</b></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name"><span>JavaScript</span><b>50%</b></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 50%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name"><span>MySQL</span><b>45%</b></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 45%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name"><span>Git / Linux</span><b>55%</b></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 55%"></div></div>
+      </div>
     </div>
   </div>
 
-  <div class="section-head" style="margin-top: 60px;">
-    <h2>项目经历</h2>
-  </div>
-  <div class="activity-list">
-    <div class="activity-item">
-      <time>2026.09</time>
-      <div>
-        <div class="activity-type">PROJECT</div>
-        <h3>个人博客系统</h3>
-        <p>使用原生 HTML / CSS / JavaScript 搭建的赛博风格个人博客，多页面结构。</p>
+  <!-- 教育经历 -->
+  <div class="info-section">
+    <div class="info-head">
+      <span class="info-index">§ 02</span>
+      <h2>教育经历 / EDUCATION</h2>
+      <span class="info-code">// timeline</span>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <time>2025 - 至今</time>
+        <div>
+          <div class="tl-type">UNIVERSITY</div>
+          <h3>软件工程 · 本科</h3>
+          <p>主修课程：C 语言、Java、数据结构、离散数学、计算机组成原理。</p>
+        </div>
       </div>
-      <span class="activity-arrow">→</span>
+      <div class="timeline-item">
+        <time>2022 - 2025</time>
+        <div>
+          <div class="tl-type">HIGH SCHOOL</div>
+          <h3>高中阶段</h3>
+          <p>理科方向，对计算机产生兴趣，开始接触编程。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 项目经历 -->
+  <div class="info-section">
+    <div class="info-head">
+      <span class="info-index">§ 03</span>
+      <h2>项目经历 / PROJECTS</h2>
+      <span class="info-code">// in progress</span>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <time>2026.09</time>
+        <div>
+          <div class="tl-type">PROJECT</div>
+          <h3>个人博客系统</h3>
+          <p>赛博编程风格个人博客，多页面结构，纯 HTML / CSS / JavaScript 实现。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <time>2026.06</time>
+        <div>
+          <div class="tl-type">PROJECT</div>
+          <h3>学生管理系统（课程设计）</h3>
+          <p>使用 Java + 集合框架实现的控制台学生信息管理程序。</p>
+        </div>
+      </div>
     </div>
   </div>
 </main>
@@ -102,6 +160,15 @@
   </div>
   <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
+
+<script>
+  function updateTime() {
+    var now = new Date();
+    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
 </body>
 </html>

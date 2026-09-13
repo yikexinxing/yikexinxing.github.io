@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>博客 · 一颗新星</title>
+  <title>博客 · 一颗新星 CYBER BLOG</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
+
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="status-dot"></span>
+    <span class="sys-version">NEWSTAR_OS v2.0</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/BLOG</span>
+  </div>
+  <div class="top-bar-right">
+    <span class="sys-signal">SIG ▮▮▯▯</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
 
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
     <span class="brand-name">一颗新星</span>
   </a>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    BLOG / ONLINE
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
-    <li><a href="blog.html">博客</a></li>
+    <li><a href="blog.html" class="active">博客</a></li>
     <li class="nav-dropdown">
       <a href="moments.html" class="dropdown-trigger">
         朋友圈
@@ -38,31 +50,51 @@
 </nav>
 
 <main class="page-content">
-  <div class="eyebrow">01 // BLOG</div>
-  <h1 class="page-title">学习<span>日志</span></h1>
-  <p class="page-subtitle">记录 Java、C、软件工程以及项目实践。</p>
+  <div class="page-head">
+    <div class="section-tag">01 // BLOG</div>
+    <h1 class="page-title">学习<span>日志</span></h1>
+    <p class="page-subtitle">记录 Java、C、软件工程以及项目实践。</p>
+  </div>
 
-  <div class="preview-grid">
-    <div class="preview-card">
-      <div class="preview-number">001</div>
-      <div class="preview-tag">JAVA</div>
+  <div class="article-list">
+    <div class="article-card" style="cursor: default;">
+      <div class="article-meta-top">
+        <span class="article-tag">[ JAVA ]</span>
+        <span class="article-date">2026.09.13</span>
+      </div>
       <h3>我的 Java 学习路线：从基础到项目</h3>
       <p>把 Java 学习拆成一条真正可以执行的路线：语法、面向对象、集合、异常、IO、数据库、Web 与 Spring。</p>
-      <div class="preview-link">2026.09.13 · LEARNING</div>
+      <div class="article-link">&gt; READ_MORE</div>
     </div>
-    <div class="preview-card">
-      <div class="preview-number">002</div>
-      <div class="preview-tag">UNIVERSITY</div>
+
+    <div class="article-card" style="cursor: default;">
+      <div class="article-meta-top">
+        <span class="article-tag">[ UNIVERSITY ]</span>
+        <span class="article-date">2026.09.12</span>
+      </div>
       <h3>大二开始，我想认真做点自己的东西</h3>
       <p>学习不只是刷题。这个博客就是我的第一个长期项目。</p>
-      <div class="preview-link">2026.09.12 · GROWTH</div>
+      <div class="article-link">&gt; READ_MORE</div>
     </div>
-    <div class="preview-card">
-      <div class="preview-number">003</div>
-      <div class="preview-tag">PROJECT</div>
+
+    <div class="article-card" style="cursor: default;">
+      <div class="article-meta-top">
+        <span class="article-tag">[ PROJECT ]</span>
+        <span class="article-date">2026.09.10</span>
+      </div>
       <h3>为什么我要做一个个人博客</h3>
       <p>记录知识，也记录自己从“不会”到“会”的过程。</p>
-      <div class="preview-link">2026.09.10 · PROJECT</div>
+      <div class="article-link">&gt; READ_MORE</div>
+    </div>
+
+    <div class="article-card" style="cursor: default;">
+      <div class="article-meta-top">
+        <span class="article-tag">[ C ]</span>
+        <span class="article-date">2026.09.08</span>
+      </div>
+      <h3>指针与数组：终于理解了地址偏移</h3>
+      <p>用几个小例子弄明白了指针操作数组的原理，回头再看代码豁然开朗。</p>
+      <div class="article-link">&gt; READ_MORE</div>
     </div>
   </div>
 </main>
@@ -73,6 +105,15 @@
   </div>
   <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
+
+<script>
+  function updateTime() {
+    var now = new Date();
+    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
 </body>
 </html>

@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>技术学习记录 · 一颗新星</title>
+  <title>技术学习记录 · 一颗新星 CYBER BLOG</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
+
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="status-dot"></span>
+    <span class="sys-version">NEWSTAR_OS v2.0</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/TECH</span>
+  </div>
+  <div class="top-bar-right">
+    <span class="sys-signal">SIG ▮▮▯▯</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
 
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
     <span class="brand-name">一颗新星</span>
   </a>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    TECH / LEARNING
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
     <li><a href="blog.html">博客</a></li>
@@ -26,7 +38,7 @@
         <span class="dropdown-arrow">⌄</span>
       </a>
       <ul class="dropdown-menu">
-        <li><a href="tech.html"><span class="dropdown-icon">&gt;_</span>技术学习记录</a></li>
+        <li><a href="tech.html" class="active"><span class="dropdown-icon">&gt;_</span>技术学习记录</a></li>
         <li><a href="life.html"><span class="dropdown-icon">◇</span>日常生活记录</a></li>
       </ul>
     </li>
@@ -38,17 +50,33 @@
 </nav>
 
 <main class="page-content">
-  <div class="eyebrow">02.1 // TECH LOG</div>
-  <h1 class="page-title">技术<span>学习记录</span></h1>
-  <p class="page-subtitle">每天的学习、踩坑、解决问题，都记在这里。</p>
+  <div class="page-head">
+    <div class="section-tag">02.1 // TECH LOG</div>
+    <h1 class="page-title">技术<span>学习记录</span></h1>
+    <p class="page-subtitle">每天的学习、踩坑、解决问题，都记在这里。</p>
+  </div>
+
+  <div class="terminal-box">
+    <p><span class="green">&gt;</span> cat /var/log/tech_learning.log</p>
+    <p><span class="green">&gt;</span> tail -n 4 · 最近四条记录</p>
+  </div>
 
   <div class="activity-list">
+    <div class="activity-item">
+       <time>09.13</time>
+      <div>
+        <div class="activity-type">BLOG</div>
+        <h3>java的学习</h3>
+        <p>学了一下午，终于要把Java学完了。</p>
+      </div>
+      <span class="activity-arrow">→</span>
+    </div>
     <div class="activity-item">
       <time>09.13</time>
       <div>
         <div class="activity-type">BLOG</div>
-        <h3>完成博客导航重构</h3>
-        <p>把单页滚动改成多页面结构，朋友圈增加下拉菜单。</p>
+        <h3>完成博客全站赛博化改造</h3>
+        <p>导航、下拉、首页、子页面统一换成赛博编程风格，性能同步优化。</p>
       </div>
       <span class="activity-arrow">→</span>
     </div>
@@ -70,6 +98,15 @@
       </div>
       <span class="activity-arrow">→</span>
     </div>
+    <div class="activity-item">
+      <time>09.10</time>
+      <div>
+        <div class="activity-type">DATA</div>
+        <h3>数据结构：链表与队列</h3>
+        <p>用 Java 手写了一遍单链表和循环队列的实现。</p>
+      </div>
+      <span class="activity-arrow">→</span>
+    </div>
   </div>
 </main>
 
@@ -79,6 +116,15 @@
   </div>
   <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
+
+<script>
+  function updateTime() {
+    var now = new Date();
+    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
 </body>
 </html>

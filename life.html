@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日常生活记录 · 一颗新星</title>
+  <title>日常生活记录 · 一颗新星 CYBER BLOG</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
+
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="status-dot"></span>
+    <span class="sys-version">NEWSTAR_OS v2.0</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/LIFE</span>
+  </div>
+  <div class="top-bar-right">
+    <span class="sys-signal">SIG ▮▮▯▯</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
 
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
     <span class="brand-name">一颗新星</span>
   </a>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    LIFE / ONLINE
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
     <li><a href="blog.html">博客</a></li>
@@ -27,7 +39,7 @@
       </a>
       <ul class="dropdown-menu">
         <li><a href="tech.html"><span class="dropdown-icon">&gt;_</span>技术学习记录</a></li>
-        <li><a href="life.html"><span class="dropdown-icon">◇</span>日常生活记录</a></li>
+        <li><a href="life.html" class="active"><span class="dropdown-icon">◇</span>日常生活记录</a></li>
       </ul>
     </li>
     <li><a href="resume.html">简历</a></li>
@@ -38,9 +50,16 @@
 </nav>
 
 <main class="page-content">
-  <div class="eyebrow">02.2 // LIFE LOG</div>
-  <h1 class="page-title">日常<span>生活记录</span></h1>
-  <p class="page-subtitle">除了代码，还有生活里的小事。</p>
+  <div class="page-head">
+    <div class="section-tag">02.2 // LIFE LOG</div>
+    <h1 class="page-title">日常<span>生活记录</span></h1>
+    <p class="page-subtitle">除了代码，还有生活里的小事。</p>
+  </div>
+
+  <div class="terminal-box">
+    <p><span class="green">&gt;</span> cat /var/log/life.log</p>
+    <p><span class="green">&gt;</span> 认真生活，也认真写代码。</p>
+  </div>
 
   <div class="activity-list">
     <div class="activity-item">
@@ -70,6 +89,15 @@
       </div>
       <span class="activity-arrow">→</span>
     </div>
+    <div class="activity-item">
+      <time>09.08</time>
+      <div>
+        <div class="activity-type">LIFE</div>
+        <h3>整理书桌和书架</h3>
+        <p>把学习区收拾干净，写代码的心情都不一样了。</p>
+      </div>
+      <span class="activity-arrow">→</span>
+    </div>
   </div>
 </main>
 
@@ -79,6 +107,15 @@
   </div>
   <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
+
+<script>
+  function updateTime() {
+    var now = new Date();
+    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
 </body>
 </html>

@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>一颗新星 · 个人博客</title>
+  <title>一颗新星 · CYBER BLOG SYSTEM</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- 全局背景层 -->
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
 
 <!-- 顶部系统状态栏 -->
 <header class="top-bar">
@@ -29,7 +34,7 @@
   </a>
 
   <ul class="nav-links">
-    <li><a href="index.html">首页</a></li>
+    <li><a href="index.html" class="active">首页</a></li>
     <li><a href="blog.html">博客</a></li>
     <li class="nav-dropdown">
       <a href="moments.html" class="dropdown-trigger">
@@ -60,14 +65,58 @@
 
 <!-- 顶部 Banner -->
 <section class="home-banner">
-  <div class="banner-overlay"></div>
-  <div class="banner-content">
-    <p class="banner-eyebrow">WELCOME TO MY BLOG</p>
-    <h1>欢迎来到我的博客</h1>
-    <p class="banner-desc">分享学习、记录生活，也把成长过程写下来。</p>
-    <div class="banner-buttons">
-      <a href="blog.html" class="banner-btn btn-primary">进入博客</a>
-      <a href="about.html" class="banner-btn btn-secondary">关于我</a>
+  <div class="banner-code-left"><pre>&gt; java BlogSystem
+&gt; public class NewStar {
+&gt;   String name = "一颗新星";
+&gt;   String mode = "LEARNING";
+&gt;   void start() {
+&gt;     while(alive) {
+&gt;       code(); dream();
+&gt;     }
+&gt;   }
+&gt; }
+&gt; system.status: ONLINE
+&gt; boot.complete: true
+&gt; signal: 98.7%
+&gt; tx_rate: 2048 kb/s
+&gt; node: NEWSTAR_BLOG
+&gt; path: /home/star/blog
+&gt; cpu: 47%
+&gt; mem: 59%
+&gt; net: stable
+&gt; task: building personal system
+&gt; life: keep going</pre></div>
+  <div class="banner-code-right"><pre>&gt; import java.util.*;
+&gt; public class Growth {
+&gt;   int day = 365;
+&gt;   boolean persist = true;
+&gt;   double progress = 0.82;
+&gt;   void run() {
+&gt;     while (persist) {
+&gt;       learn(); record();
+&gt;     }
+&gt;   }
+&gt; }
+&gt; [OK] service started
+&gt; [OK] port 5500 listening
+&gt; [OK] blog system online
+&gt; [INFO] user: 一颗新星
+&gt; [INFO] role: developer
+&gt; [INFO] stack: Java, C, HTML
+&gt; [INFO] target: full stack
+&gt; [INFO] status: running
+&gt; [INFO] keep building</pre></div>
+  <div class="banner-scan"></div>
+
+  <div class="banner-box">
+    <div class="banner-content">
+      <p class="banner-eyebrow">// WELCOME TO MY BLOG SYSTEM</p>
+      <h1>欢迎来到我的博客</h1>
+      <p class="banner-desc">[ 分享学习 · 记录生活 · 把成长过程写下来 ]</p>
+      <div class="banner-buttons">
+        <a href="blog.html" class="btn">&gt; ENTER_BLOG</a>
+        <a href="about.html" class="btn btn-secondary">&gt; ABOUT_ME</a>
+      </div>
     </div>
   </div>
 </section>
@@ -79,58 +128,90 @@
     <!-- 左侧：文章列表 -->
     <section class="article-section">
       <div class="section-header">
-        <h2>我的博客文章</h2>
+        <div>
+          <div class="section-tag">01 // ARTICLES</div>
+          <h2>我的博客文章</h2>
+        </div>
         <div class="search-box">
-          <input type="text" placeholder="搜索文章..." />
-          <button>搜索</button>
+          <input type="text" placeholder="> search articles..." />
+          <button type="button">SEARCH</button>
         </div>
       </div>
 
       <div class="article-list">
-        <a href="#" class="article-card">
-          <div class="article-tag">JAVA</div>
+        <a href="blog.html" class="article-card">
+          <div class="article-meta-top">
+            <span class="article-tag">[ JAVA ]</span>
+            <span class="article-date">2026.09.13</span>
+          </div>
           <h3>Java 学习路线：从基础到项目</h3>
           <p>把 Java 学习拆成一条真正可以执行的路线，每天进步一点。</p>
-          <div class="article-meta">2026.09.13 · 学习日志</div>
+          <div class="article-link">&gt; READ_MORE</div>
         </a>
 
-        <a href="#" class="article-card">
-          <div class="article-tag">HTML / CSS</div>
+        <a href="blog.html" class="article-card">
+          <div class="article-meta-top">
+            <span class="article-tag">[ FRONTEND ]</span>
+            <span class="article-date">2026.09.12</span>
+          </div>
           <h3>个人博客首页布局改造记录</h3>
-          <p>从终端风改成更清爽的居中博客首页，视觉更舒服。</p>
-          <div class="article-meta">2026.09.12 · 前端</div>
+          <p>从浅色博客改成赛博编程终端风格，视觉和性能同步优化。</p>
+          <div class="article-link">&gt; READ_MORE</div>
         </a>
 
-        <a href="#" class="article-card">
-          <div class="article-tag">生活</div>
+        <a href="blog.html" class="article-card">
+          <div class="article-meta-top">
+            <span class="article-tag">[ LIFE ]</span>
+            <span class="article-date">2026.09.10</span>
+          </div>
           <h3>把学习过程记录下来，本身就是成长</h3>
           <p>不需要每天都很厉害，但要每天都在前进。</p>
-          <div class="article-meta">2026.09.10 · 生活记录</div>
+          <div class="article-link">&gt; READ_MORE</div>
         </a>
       </div>
     </section>
 
     <!-- 右侧：侧边栏 -->
     <aside class="sidebar">
-      <div class="sidebar-card">
-        <div class="avatar">
-          <span>一</span>
-        </div>
+      <div class="sidebar-card profile-card">
+        <div class="avatar">✦</div>
         <h3>一颗新星</h3>
-        <p class="sidebar-desc">软件工程学生，正在学习 Java、C 和前端。</p>
-        <div class="sidebar-stats">
-          <div><strong>12</strong><span>文章</span></div>
-          <div><strong>8</strong><span>分类</span></div>
-          <div><strong>365</strong><span>天数</span></div>
+        <p class="sidebar-desc">// Software Engineering Student</p>
+        <div class="profile-stats">
+          <div>
+            <strong>12</strong>
+            <span>POSTS</span>
+          </div>
+          <div>
+            <strong>08</strong>
+            <span>CATEGORY</span>
+          </div>
+          <div>
+            <strong>365</strong>
+            <span>DAYS</span>
+          </div>
+        </div>
+        <div class="profile-status">
+          <span class="status-dot small"></span>
+          <span>SYSTEM ONLINE</span>
         </div>
       </div>
 
       <div class="sidebar-card">
-        <h4>最新动态</h4>
+        <div class="sidebar-title">// LATEST NEWS</div>
         <ul class="news-list">
-          <li><span>09.13</span>博客首页完成改造</li>
-          <li><span>09.12</span>完成 Java 复习笔记</li>
-          <li><span>09.10</span>开始新学期学习计划</li>
+          <li>
+            <span class="news-time">09.13</span>
+            <span>博客首页赛博化完成</span>
+          </li>
+          <li>
+            <span class="news-time">09.12</span>
+            <span>完成 Java 集合框架笔记</span>
+          </li>
+          <li>
+            <span class="news-time">09.10</span>
+            <span>新学期学习计划启动</span>
+          </li>
         </ul>
       </div>
     </aside>
@@ -149,8 +230,8 @@
 <script>
   // 系统时间
   function updateTime() {
-    const now = new Date();
-    const t = now.toTimeString().slice(0, 8);
+    var now = new Date();
+    var t = now.toTimeString().slice(0, 8);
     document.getElementById('sysTime').textContent = t;
   }
   setInterval(updateTime, 1000);

@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>友链 · 一颗新星</title>
+  <title>友链 · 一颗新星 CYBER BLOG</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
+
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="status-dot"></span>
+    <span class="sys-version">NEWSTAR_OS v2.0</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/LINKS</span>
+  </div>
+  <div class="top-bar-right">
+    <span class="sys-signal">SIG ▮▮▯▯</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
 
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
     <span class="brand-name">一颗新星</span>
   </a>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    LINKS / ONLINE
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
     <li><a href="blog.html">博客</a></li>
@@ -31,39 +43,46 @@
       </ul>
     </li>
     <li><a href="resume.html">简历</a></li>
-    <li><a href="links.html">友链</a></li>
+    <li><a href="links.html" class="active">友链</a></li>
     <li><a href="tools.html">工具</a></li>
     <li><a href="about.html">关于</a></li>
   </ul>
 </nav>
 
 <main class="page-content">
-  <div class="eyebrow">04 // LINKS</div>
-  <h1 class="page-title">友情<span>链接</span></h1>
-  <p class="page-subtitle">优秀的朋友和他们的站点。</p>
+  <div class="page-head">
+    <div class="section-tag">04 // LINKS</div>
+    <h1 class="page-title">友情<span>链接</span></h1>
+    <p class="page-subtitle">优秀的朋友和他们的站点，欢迎交换友链。</p>
+  </div>
 
-  <div class="preview-grid">
-    <div class="preview-card">
-      <div class="preview-number">01</div>
-      <div class="preview-tag">BLOG</div>
+  <div class="terminal-box">
+    <p><span class="green">&gt;</span> ping friends --online</p>
+    <p><span class="green">&gt;</span> 正在连接好友节点 ... <span style="color:var(--cyan)">[OK]</span></p>
+  </div>
+
+  <div class="grid-cards">
+    <a href="https://github.com" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">01</div>
+      <div class="card-tag">BLOG</div>
       <h3>示例站点 1</h3>
       <p>一个同样热爱技术的开发者博客。</p>
-      <a href="#" class="preview-link">&gt; VISIT</a>
-    </div>
-    <div class="preview-card">
-      <div class="preview-number">02</div>
-      <div class="preview-tag">BLOG</div>
+      <div class="card-link">&gt; VISIT</div>
+    </a>
+    <a href="https://juejin.cn" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">02</div>
+      <div class="card-tag">BLOG</div>
       <h3>示例站点 2</h3>
       <p>记录编程学习与生活的个人站点。</p>
-      <a href="#" class="preview-link">&gt; VISIT</a>
-    </div>
-    <div class="preview-card">
-      <div class="preview-number">03</div>
-      <div class="preview-tag">RESOURCE</div>
+      <div class="card-link">&gt; VISIT</div>
+    </a>
+    <a href="https://zhihu.com" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">03</div>
+      <div class="card-tag">RESOURCE</div>
       <h3>示例站点 3</h3>
       <p>分享开发工具与学习资源。</p>
-      <a href="#" class="preview-link">&gt; VISIT</a>
-    </div>
+      <div class="card-link">&gt; VISIT</div>
+    </a>
   </div>
 </main>
 
@@ -73,6 +92,15 @@
   </div>
   <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
+
+<script>
+  function updateTime() {
+    var now = new Date();
+    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
 </body>
 </html>

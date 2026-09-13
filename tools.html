@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>工具 · 一颗新星</title>
+  <title>工具 · 一颗新星 CYBER BLOG</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="bg-grid"></div>
+<div class="bg-scanline"></div>
+
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="status-dot"></span>
+    <span class="sys-version">NEWSTAR_OS v2.0</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/TOOLS</span>
+  </div>
+  <div class="top-bar-right">
+    <span class="sys-signal">SIG ▮▮▯▯</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
 
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
     <span class="brand-name">一颗新星</span>
   </a>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    TOOLS / ONLINE
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
     <li><a href="blog.html">博客</a></li>
@@ -32,38 +44,66 @@
     </li>
     <li><a href="resume.html">简历</a></li>
     <li><a href="links.html">友链</a></li>
-    <li><a href="tools.html">工具</a></li>
+    <li><a href="tools.html" class="active">工具</a></li>
     <li><a href="about.html">关于</a></li>
   </ul>
 </nav>
 
 <main class="page-content">
-  <div class="eyebrow">05 // TOOLS</div>
-  <h1 class="page-title">开发<span>工具</span></h1>
-  <p class="page-subtitle">日常开发常用的工具与资源。</p>
+  <div class="page-head">
+    <div class="section-tag">05 // TOOLS</div>
+    <h1 class="page-title">开发<span>工具</span></h1>
+    <p class="page-subtitle">日常开发常用的工具与资源。</p>
+  </div>
 
-  <div class="preview-grid">
-    <div class="preview-card">
-      <div class="preview-number">01</div>
-      <div class="preview-tag">IDE</div>
+  <div class="terminal-box">
+    <p><span class="green">&gt;</span> apt list --installed | grep dev</p>
+    <p><span class="green">&gt;</span> 常用工具集，持续补充中。</p>
+  </div>
+
+  <div class="grid-cards">
+    <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">01</div>
+      <div class="card-tag">IDE</div>
       <h3>IntelliJ IDEA</h3>
       <p>Java 开发主力 IDE，强大的代码补全与调试功能。</p>
-      <a href="#" class="preview-link">&gt; 查看</a>
-    </div>
-    <div class="preview-card">
-      <div class="preview-number">02</div>
-      <div class="preview-tag">EDITOR</div>
+      <div class="card-link">&gt; VIEW</div>
+    </a>
+    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">02</div>
+      <div class="card-tag">EDITOR</div>
       <h3>VS Code</h3>
       <p>前端与轻量代码编辑，配合丰富插件使用。</p>
-      <a href="#" class="preview-link">&gt; 查看</a>
-    </div>
-    <div class="preview-card">
-      <div class="preview-number">03</div>
-      <div class="preview-tag">GIT</div>
+      <div class="card-link">&gt; VIEW</div>
+    </a>
+    <a href="https://github.com/" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">03</div>
+      <div class="card-tag">GIT</div>
       <h3>GitHub</h3>
       <p>代码托管与版本控制，所有项目都在这里。</p>
-      <a href="#" class="preview-link">&gt; 查看</a>
-    </div>
+      <div class="card-link">&gt; VIEW</div>
+    </a>
+    <a href="https://www.mysql.com/" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">04</div>
+      <div class="card-tag">DB</div>
+      <h3>MySQL</h3>
+      <p>关系型数据库，正在学习的基础数据存储方案。</p>
+      <div class="card-link">&gt; VIEW</div>
+    </a>
+    <a href="https://www.oracle.com/java/" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">05</div>
+      <div class="card-tag">LANG</div>
+      <h3>Java JDK</h3>
+      <p>Java 开发工具包，当前主力学习语言。</p>
+      <div class="card-link">&gt; VIEW</div>
+    </a>
+    <a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener" class="grid-card">
+      <div class="card-num">06</div>
+      <div class="card-tag">DOCS</div>
+      <h3>MDN Web Docs</h3>
+      <p>Web 技术文档，前端学习首选参考。</p>
+      <div class="card-link">&gt; VIEW</div>
+    </a>
   </div>
 </main>
 
@@ -73,6 +113,15 @@
   </div>
   <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
+
+<script>
+  function updateTime() {
+    var now = new Date();
+    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
 
 </body>
 </html>
