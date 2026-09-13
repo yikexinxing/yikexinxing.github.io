@@ -1,127 +1,533 @@
 <!doctype html>
+
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一颗新星的个人博客——记录 Java 学习、软件工程、项目与大学生活。">
-  <title>一颗新星</title>
+
+<meta name="description"
+     content="一颗星星的个人博客——记录 Java 学习、软件工程、项目实践与大学生活。">
+
+  <title>一颗星星 · yikexinxing</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<!-- =========================
+     导航栏
+========================= -->
+
 <header class="nav">
-  <a class="brand" href="index.html"><span>✦</span> 一颗新星</a>
- <ul class="nav-links">
-    <li>
-        <a href="#home">home</a>
-    </li>
 
-    <li>
-        <a href="#posts">blog</a>
-    </li>
+  <a class="brand" href="#home">
+    <span class="brand-symbol">✦</span>
+    yikexinxing
+  </a>
 
-    <li>
-        <a href="#moments">moments</a>
-    </li>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    SYSTEM ONLINE
+  </div>
 
-    <li>
-        <a href="#about">about</a>
-    </li>
-</ul>
+  <ul class="nav-links">
+
+```
+<li>
+  <a href="#home">home</a>
+</li>
+
+<li>
+  <a href="#articles">blog</a>
+</li>
+
+<li>
+  <a href="#timeline">moments</a>
+</li>
+
+<li>
+  <a href="#about">about</a>
+</li>
+```
+
+  </ul>
+
 </header>
 
 <main>
-  <section class="hero">
-    <div class="terminal">
-    who am i
+
+<!-- =========================
+     Hero
+========================= -->
+
+<section id="home" class="hero">
+
+  <div class="hero-left">
+
+```
+<div class="terminal">
+  whoami
 </div>
 
+<div class="terminal-output">
+  > yikexinxing
+</div>
+
+<p class="code-comment">
+  // Software Engineering Student
+</p>
+
 <h1>
-    HELLO,<br>
-    <span>WORLD.</span>
+  HELLO,<br>
+  <span>WORLD.</span>
+  <i class="cursor"></i>
 </h1>
 
 <p class="hero-description">
-    我是一名软件工程专业学生，
-    正在学习 Java、数据结构与计算机基础。
-    这里记录我的编程学习、项目实践、
-    技术思考，以及大学生活。
+  一个正在学习 Java 的软件工程学生。
+  <br>
+  写代码、做项目、学技术，也记录大学生活。
 </p>
 
-<a href="#posts" class="btn">
-    ./view-projects
-</a>
+<div class="hero-buttons">
 
-<a href="#moments" class="btn btn-secondary">
-    ./my-life
-</a>
-    <div class="star-card">
-      <div class="orb">✦</div>
-      <p>yikexinxing</p>
-      <small>Keep learning · Keep building · Keep recording</small>
-    </div>
-  </section>
+  <a href="#articles" class="btn">
+    &gt; ./view-blog
+  </a>
 
-  <section class="stats">
-    <div><strong>01</strong><span>Java 学习</span></div>
-    <div><strong>02</strong><span>项目实践</span></div>
-    <div><strong>03</strong><span>考研规划</span></div>
-    <div><strong>∞</strong><span>持续成长</span></div>
-  </section>
+  <a href="#timeline" class="btn btn-secondary">
+    &gt; ./my-life
+  </a>
 
-  <section id="articles" class="section">
-    <div class="section-head">
-      <div><p class="eyebrow">LATEST POSTS</p><h2>最近文章</h2></div>
-      <span>我的学习脚印</span>
-    </div>
-    <div class="cards">
-      <article class="card featured">
-        <span class="tag">Java</span>
-        <h3>我的 Java 学习路线：从基础到项目</h3>
-        <p>把 Java 学习拆成一条可以真正执行的路线：语法、面向对象、集合、异常、IO、数据库、Web 与 Spring。</p>
-        <div class="meta">2026.09.13 · 学习笔记</div>
-      </article>
-      <article class="card">
-        <span class="tag">大学</span>
-        <h3>大二开始，我想认真做点自己的东西</h3>
-        <p>学习不只是刷题。这个博客就是我的第一个长期项目。</p>
-        <div class="meta">2026.09.12 · 成长记录</div>
-      </article>
-      <article class="card">
-        <span class="tag">项目</span>
-        <h3>为什么我要做一个个人博客</h3>
-        <p>记录知识，也记录从“不会”到“会”的过程。</p>
-        <div class="meta">2026.09.10 · 项目记录</div>
-      </article>
-    </div>
-  </section>
+</div>
 
-  <section id="timeline" class="section timeline-section">
-    <div class="section-head">
-      <div><p class="eyebrow">MOMENTS</p><h2>最近动态</h2></div>
-    </div>
-    <div class="timeline">
-      <div class="item"><time>09.13</time><p><b>博客上线</b><br>搭好了属于自己的第一个博客首页。</p></div>
-      <div class="item"><time>09.12</time><p><b>继续 Java</b><br>每天留一点时间写代码，比收藏一堆教程更重要。</p></div>
-      <div class="item"><time>09.10</time><p><b>新的开始</b><br>把学习过程记录下来，看看一年后的自己会走到哪里。</p></div>
-    </div>
-  </section>
+<div class="terminal-line">
+  <span>root@yikexinxing</span>:~$ ./start_learning.sh
+</div>
+```
 
-  <section id="about" class="about">
-    <div>
-      <p class="eyebrow">ABOUT ME</p>
-      <h2>你好，我是<br>yikexinxing。</h2>
-    </div>
-    <div class="about-copy">
-      <p>软件工程专业学生，目前主要学习 C 语言和 Java。</p>
-      <p>这个博客不会追求“看起来很厉害”，而是想真实记录学习、写项目、踩坑、解决问题和生活中的一些瞬间。</p>
-      <div class="chips"><span>Java</span><span>软件工程</span><span>学习记录</span><span>项目实践</span><span>大学生活</span></div>
-    </div>
-  </section>
+  </div>
+
+  <!-- =========================
+       右侧代码窗口
+  ========================= -->
+
+  <div class="code-window">
+
+```
+<div class="window-top">
+
+  <div class="window-dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="window-title">
+    developer.java
+  </div>
+
+</div>
+
+<div class="code-content">
+
+  <div>
+    <span class="code-purple">public class</span>
+    <span class="code-green">Developer</span> {
+  </div>
+
+  <br>
+
+  <div class="indent">
+    <span class="code-purple">String</span>
+    name =
+    <span class="code-yellow">"yikexinxing"</span>;
+  </div>
+
+  <div class="indent">
+    <span class="code-purple">String</span>
+    major =
+    <span class="code-yellow">"Software Engineering"</span>;
+  </div>
+
+  <div class="indent">
+    <span class="code-purple">String</span>
+    language =
+    <span class="code-yellow">"Java"</span>;
+  </div>
+
+  <br>
+
+  <div class="indent">
+
+    <span class="code-purple">void</span>
+    <span class="code-cyan">learning</span>() {
+
+  </div>
+
+  <div class="indent-2">
+
+    System.out.println(
+    <span class="code-yellow">
+      "Keep learning..."
+    </span>
+    );
+
+  </div>
+
+  <div class="indent">
+    }
+  </div>
+
+  <br>
+
+  <div>
+    }
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================
+     数据统计
+========================= -->
+
+<section class="stats">
+
+  <div class="stat">
+    <strong>01</strong>
+    <span>JAVA LEARNING</span>
+  </div>
+
+  <div class="stat">
+    <strong>02</strong>
+    <span>PROJECTS</span>
+  </div>
+
+  <div class="stat">
+    <strong>03</strong>
+    <span>POSTGRADUATE</span>
+  </div>
+
+  <div class="stat">
+    <strong>∞</strong>
+    <span>KEEP GROWING</span>
+  </div>
+
+</section>
+
+<!-- =========================
+     最近文章
+========================= -->
+
+<section id="articles" class="section">
+
+  <div class="section-head">
+
+```
+<div>
+
+  <p class="eyebrow">
+    01 // LATEST POSTS
+  </p>
+
+  <h2>
+    最近文章
+  </h2>
+
+</div>
+
+<span>
+  MY LEARNING LOG
+</span>
+```
+
+  </div>
+
+  <div class="cards">
+
+```
+<article class="card featured">
+
+  <div class="card-number">
+    001
+  </div>
+
+  <span class="tag">
+    JAVA
+  </span>
+
+  <h3>
+    我的 Java 学习路线：从基础到项目
+  </h3>
+
+  <p>
+    把 Java 学习拆成一条真正可以执行的路线：
+    语法、面向对象、集合、异常、IO、数据库、
+    Web 与 Spring。
+  </p>
+
+  <div class="meta">
+    2026.09.13 · LEARNING
+  </div>
+
+</article>
+
+
+<article class="card">
+
+  <div class="card-number">
+    002
+  </div>
+
+  <span class="tag">
+    UNIVERSITY
+  </span>
+
+  <h3>
+    大二开始，我想认真做点自己的东西
+  </h3>
+
+  <p>
+    学习不只是刷题。
+    这个博客就是我的第一个长期项目。
+  </p>
+
+  <div class="meta">
+    2026.09.12 · GROWTH
+  </div>
+
+</article>
+
+
+<article class="card">
+
+  <div class="card-number">
+    003
+  </div>
+
+  <span class="tag">
+    PROJECT
+  </span>
+
+  <h3>
+    为什么我要做一个个人博客
+  </h3>
+
+  <p>
+    记录知识，也记录自己从“不会”
+    到“会”的过程。
+  </p>
+
+  <div class="meta">
+    2026.09.10 · PROJECT
+  </div>
+
+</article>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================
+     Moments
+========================= -->
+
+<section id="timeline" class="section timeline-section">
+
+  <div class="section-head">
+
+```
+<div>
+
+  <p class="eyebrow">
+    02 // MOMENTS
+  </p>
+
+  <h2>
+    最近动态
+  </h2>
+
+</div>
+```
+
+  </div>
+
+  <div class="timeline">
+
+```
+<div class="item">
+
+  <time>
+    09.13
+  </time>
+
+  <div>
+
+    <h3>
+      BLOG DEPLOYED
+    </h3>
+
+    <p>
+      搭好了属于自己的第一个博客首页。
+    </p>
+
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <time>
+    09.12
+  </time>
+
+  <div>
+
+    <h3>
+      JAVA LEARNING
+    </h3>
+
+    <p>
+      每天留一点时间写代码，
+      比收藏一堆教程更重要。
+    </p>
+
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <time>
+    09.10
+  </time>
+
+  <div>
+
+    <h3>
+      NEW BEGINNING
+    </h3>
+
+    <p>
+      把学习过程记录下来，
+      看看一年后的自己会走到哪里。
+    </p>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================
+     About
+========================= -->
+
+<section id="about" class="about">
+
+  <div>
+
+```
+<p class="eyebrow">
+  03 // ABOUT ME
+</p>
+
+<h2>
+  HELLO,<br>
+  I'M<br>
+  <span>YIKEXINXING.</span>
+</h2>
+```
+
+  </div>
+
+  <div class="about-copy">
+
+```
+<div class="terminal-box">
+
+  <p>
+    <span class="green">&gt;</span>
+    system.user
+  </p>
+
+  <p>
+    <span class="green">&gt;</span>
+    software_engineering_student
+  </p>
+
+  <p>
+    <span class="green">&gt;</span>
+    java.learner
+  </p>
+
+  <p>
+    <span class="green">&gt;</span>
+    future.developer
+  </p>
+
+</div>
+
+
+<p>
+  软件工程专业学生，目前主要学习 C 语言和 Java。
+</p>
+
+<p>
+  这个博客不会追求“看起来很厉害”，
+  而是想真实记录学习、写项目、踩坑、
+  解决问题和生活中的一些瞬间。
+</p>
+
+
+<div class="chips">
+
+  <span>Java</span>
+  <span>C</span>
+  <span>Software Engineering</span>
+  <span>Projects</span>
+  <span>University</span>
+
+</div>
+```
+
+  </div>
+
+</section>
+
 </main>
 
+<!-- =========================
+     Footer
+========================= -->
+
 <footer>
-  <span>© 2026 yikexinxing</span>
-  <span>Made with curiosity ✦</span>
+
+  <div>
+    <span>root@yikexinxing</span>:~$
+    connection established
+  </div>
+
+  <div>
+    © 2026 yikexinxing ·
+    <span>KEEP BUILDING ✦</span>
+  </div>
+
 </footer>
+
 </body>
+
 </html>
