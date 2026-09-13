@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>一颗新星 · SYSTEM TERMINAL</title>
+  <title>一颗新星 · 个人博客</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 顶部系统状态栏 -->
+<!-- 顶部系统状态栏（保留） -->
 <header class="top-bar">
   <div class="top-bar-left">
     <span class="status-dot"></span>
@@ -21,7 +21,7 @@
   </div>
 </header>
 
-<!-- 主导航 -->
+<!-- 主导航（保留，朋友圈下拉不变） -->
 <nav class="nav">
   <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
@@ -58,137 +58,91 @@
   </ul>
 </nav>
 
-<!-- 主区域：终端 + 状态面板 -->
-<section class="main-panel">
-  <!-- 左侧终端 -->
-  <div class="terminal-window">
-    <div class="window-header">
-      <div class="window-dots">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="window-title">wasteland · terminal v2.0</div>
-    </div>
-    <div class="terminal-body">
-      <div class="terminal-logo">
-        <pre>
-  _   _                    _    _                
- | \ | | _____      ____ _| |_(_)_ __   __ _ 
- |  \| |/ _ \ \ /\ / / _` | __| | '_ \ / _` |
- | |\  |  __/\ V  V / (_| | |_| | | | | (_| |
- |_| \_|\___| \_/\_/ \__,_|\__|_|_| |_|\__, |
-                                        |___/ 
-        </pre>
-      </div>
-      <div class="terminal-line"><span class="prompt">root@newstar:~#</span> system info</div>
-      <div class="terminal-output">
-        <p><span class="label">NAME</span>        : 一颗新星</p>
-        <p><span class="label">TYPE</span>        : Software Engineering Student</p>
-        <p><span class="label">OS</span>          : LEARNING_MODE</p>
-        <p><span class="label">LANG</span>        : Java / C</p>
-        <p><span class="label">STATUS</span>      : <span class="status-online">ONLINE</span></p>
-        <p><span class="label">UPTIME</span>      : 2026.09.13</p>
-      </div>
-      <div class="terminal-line">
-        <span class="prompt">root@newstar:~#</span>
-        <span class="cursor"></span>
-      </div>
-    </div>
-    <div class="window-actions">
-      <a href="blog.html" class="btn btn-primary">[ ENTER · 选择任务 ]</a>
-      <a href="about.html" class="btn btn-secondary">[ DECRYPT · 查看档案 ]</a>
-    </div>
-  </div>
+<!-- ========== 从这里开始是新的首页主体 ========== -->
 
-  <!-- 右侧系统状态面板 -->
-  <div class="status-panel">
-    <div class="panel-header">
-      <span class="panel-title">SYS_STATUS</span>
-      <span class="panel-uptime">uptime <span id="uptime">00:00:00</span></span>
-    </div>
-
-    <div class="status-item">
-      <span class="status-label">OPERATOR</span>
-      <span class="status-value">一颗新星 / NEWSTAR</span>
-    </div>
-    <div class="status-item">
-      <span class="status-label">ROLE</span>
-      <span class="status-value highlight">Full-Stack · AI Era</span>
-    </div>
-    <div class="status-item">
-      <span class="status-label">LOCATION</span>
-      <span class="status-value">LUOYANG · CN</span>
-    </div>
-    <div class="status-item">
-      <span class="status-label">STATUS</span>
-      <span class="status-value status-online">● ONLINE</span>
-    </div>
-
-    <div class="status-item">
-      <span class="status-label">CPU.LOAD</span>
-      <span class="status-value">48%</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill progress-cpu" style="width: 48%"></div>
-    </div>
-
-    <div class="status-item">
-      <span class="status-label">MEM.USAGE</span>
-      <span class="status-value">56%</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill progress-mem" style="width: 56%"></div>
-    </div>
-
-    <div class="status-item">
-      <span class="status-label">SIG.SIGNAL</span>
-      <span class="status-value">85%</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill progress-sig" style="width: 85%"></div>
-    </div>
-
-    <!-- 波形图 -->
-    <div class="wave-box">
-      <svg class="wave" viewBox="0 0 400 60" preserveAspectRatio="none">
-        <path d="M0,30 Q20,20 40,32 T80,28 T120,35 T160,25 T200,33 T240,22 T280,36 T320,26 T360,34 T400,28 L400,60 L0,60 Z" fill="rgba(125,252,255,0.15)" stroke="#7dfcff" stroke-width="1.5"/>
-      </svg>
-      <div class="wave-label">// telemetry · realtime</div>
-      <div class="wave-speed">tx 120 kb/s</div>
+<!-- 顶部 Banner -->
+<section class="home-banner">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <p class="banner-eyebrow">WELCOME TO MY BLOG</p>
+    <h1>欢迎来到我的博客</h1>
+    <p class="banner-desc">分享学习、记录生活，也把成长过程写下来。</p>
+    <div class="banner-buttons">
+      <a href="blog.html" class="banner-btn btn-primary">进入博客</a>
+      <a href="about.html" class="banner-btn btn-secondary">关于我</a>
     </div>
   </div>
 </section>
 
-<!-- 任务选择面板 -->
-<section class="quest-panel">
-  <div class="quest-header">
-    <span class="quest-index">§ 02</span>
-    <span class="quest-title">QUEST_PANEL</span>
-    <span class="quest-desc">// 选择你要进入的区域</span>
-  </div>
+<!-- 下方内容区 -->
+<main class="home-main">
+  <div class="home-container">
 
-  <div class="quest-grid">
-    <a href="blog.html" class="quest-card">
-      <div class="quest-num">001</div>
-      <div class="quest-name">BLOG / 学习日志</div>
-      <div class="quest-desc">记录 Java、C、软件工程与项目实践</div>
-      <div class="quest-link">&gt; ENTER_BLOG</div>
-    </a>
-    <a href="moments.html" class="quest-card">
-      <div class="quest-num">002</div>
-      <div class="quest-name">MOMENTS / 朋友圈</div>
-      <div class="quest-desc">技术学习记录 + 日常生活记录</div>
-      <div class="quest-link">&gt; ENTER_MOMENTS</div>
-    </a>
-    <a href="resume.html" class="quest-card">
-      <div class="quest-num">003</div>
-      <div class="quest-name">RESUME / 简历</div>
-      <div class="quest-desc">学习经历、技能栈、项目与方向</div>
-      <div class="quest-link">&gt; ENTER_RESUME</div>
-    </a>
-  </div>
-</section>
+    <!-- 左侧：文章列表 -->
+    <section class="article-section">
+      <div class="section-header">
+        <h2>我的博客文章</h2>
+        <div class="search-box">
+          <input type="text" placeholder="搜索文章..." />
+          <button>搜索</button>
+        </div>
+      </div>
 
-<!-- 页脚 -->
+      <div class="article-list">
+        <a href="#" class="article-card">
+          <div class="article-tag">JAVA</div>
+          <h3>Java 学习路线：从基础到项目</h3>
+          <p>把 Java 学习拆成一条真正可以执行的路线，每天进步一点。</p>
+          <div class="article-meta">2026.09.13 · 学习日志</div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-tag">HTML / CSS</div>
+          <h3>个人博客首页布局改造记录</h3>
+          <p>从终端风改成更清爽的居中博客首页，视觉更舒服。</p>
+          <div class="article-meta">2026.09.12 · 前端</div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-tag">生活</div>
+          <h3>把学习过程记录下来，本身就是成长</h3>
+          <p>不需要每天都很厉害，但要每天都在前进。</p>
+          <div class="article-meta">2026.09.10 · 生活记录</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 右侧：侧边栏 -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="avatar">
+          <span>一</span>
+        </div>
+        <h3>一颗新星</h3>
+        <p class="sidebar-desc">软件工程学生，正在学习 Java、C 和前端。</p>
+        <div class="sidebar-stats">
+          <div><strong>12</strong><span>文章</span></div>
+          <div><strong>8</strong><span>分类</span></div>
+          <div><strong>365</strong><span>天数</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>最新动态</h4>
+        <ul class="news-list">
+          <li><span>09.13</span>博客首页完成改造</li>
+          <li><span>09.12</span>完成 Java 复习笔记</li>
+          <li><span>09.10</span>开始新学期学习计划</li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ========== 首页主体修改结束 ========== -->
+
+<!-- 页脚（保留） -->
 <footer>
   <div class="footer-terminal">
     <span>root@newstar</span>:~$ connection established <span class="footer-cursor">█</span>
@@ -205,16 +159,6 @@
   }
   setInterval(updateTime, 1000);
   updateTime();
-
-  // 运行时间简单模拟
-  let s = 0;
-  setInterval(() => {
-    s++;
-    const h = String(Math.floor(s / 3600)).padStart(2, '0');
-    const m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
-    const sec = String(s % 60).padStart(2, '0');
-    document.getElementById('uptime').textContent = `${h}:${m}:${sec}`;
-  }, 1000);
 </script>
 
 </body>
