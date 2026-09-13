@@ -1,29 +1,20 @@
-```css
 /* =========================================================
    一颗新星 · Cyber Developer Theme
    Global Style
 ========================================================= */
-
-
 /* =========================================================
    RESET
 ========================================================= */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
 html {
   scroll-behavior: smooth;
 }
-
-
 body {
   min-height: 100vh;
-
   background:
     radial-gradient(
       circle at 10% 10%,
@@ -41,98 +32,62 @@ body {
       transparent 35%
     ),
     var(--bg);
-
   color: var(--text);
-
   font-family:
     "Microsoft YaHei",
     "PingFang SC",
     "Segoe UI",
     Consolas,
     monospace;
-
   line-height: 1.7;
-
   overflow-x: hidden;
 }
-
-
 /* =========================================================
    VARIABLES
 ========================================================= */
-
 :root {
-
   --bg: #020507;
-
   --bg2: #061015;
-
   --card: rgba(5, 15, 20, 0.86);
-
   --green: #00ff9c;
-
   --cyan: #00eaff;
-
   --purple: #a855f7;
-
   --yellow: #ffe600;
-
   --red: #ff3864;
-
   --text: #e9fff7;
-
   --muted: #78958d;
-
   --muted2: #4c6962;
-
   --border: rgba(0, 255, 156, 0.20);
-
   --border-bright: rgba(0, 255, 156, 0.48);
-
   --glow-green:
     0 0 8px rgba(0, 255, 156, 0.8),
     0 0 25px rgba(0, 255, 156, 0.25);
-
   --glow-cyan:
     0 0 8px rgba(0, 234, 255, 0.8),
     0 0 25px rgba(0, 234, 255, 0.25);
 }
-
-
 /* =========================================================
    BODY GRID
 ========================================================= */
-
 body::before {
-
   content: "";
-
   position: fixed;
-
   inset: 0;
-
   pointer-events: none;
-
   z-index: -5;
-
   background-image:
-
     linear-gradient(
       rgba(0, 255, 156, 0.035) 1px,
       transparent 1px
     ),
-
     linear-gradient(
       90deg,
       rgba(0, 255, 156, 0.035) 1px,
       transparent 1px
     );
-
   background-size: 45px 45px;
-
   animation:
     gridMove 18s linear infinite;
-
   mask-image:
     linear-gradient(
       to bottom,
@@ -140,24 +95,15 @@ body::before {
       rgba(0, 0, 0, 0.4)
     );
 }
-
-
 /* =========================================================
    SCANLINES
 ========================================================= */
-
 body::after {
-
   content: "";
-
   position: fixed;
-
   inset: 0;
-
   pointer-events: none;
-
   z-index: 9999;
-
   background:
     repeating-linear-gradient(
       0deg,
@@ -166,96 +112,58 @@ body::after {
       transparent 1px,
       transparent 4px
     );
-
   opacity: 0.25;
 }
-
-
 /* =========================================================
    SELECTION
 ========================================================= */
-
 ::selection {
-
   color: #00130b;
-
   background: var(--green);
 }
-
-
 /* =========================================================
    LINKS
 ========================================================= */
-
 a {
-
   color: inherit;
-
   text-decoration: none;
 }
-
-
 /* =========================================================
    NAVIGATION
 ========================================================= */
-
 .nav {
-
   position: sticky;
-
   top: 0;
-
   z-index: 1000;
-
   width: 100%;
-
   min-height: 72px;
-
   padding:
     0
     clamp(20px, 5vw, 80px);
-
   display: flex;
-
   align-items: center;
-
   gap: 30px;
-
   background:
     rgba(2, 5, 7, 0.82);
-
   border-bottom:
     1px solid var(--border);
-
   backdrop-filter:
     blur(18px);
-
   -webkit-backdrop-filter:
     blur(18px);
-
   box-shadow:
     0 10px 40px rgba(0,0,0,0.2);
 }
-
-
 /* =========================================================
    NAV TOP LIGHT
 ========================================================= */
-
 .nav::after {
-
   content: "";
-
   position: absolute;
-
   left: 0;
-
   bottom: -1px;
-
   width: 30%;
-
   height: 1px;
-
   background:
     linear-gradient(
       90deg,
@@ -264,357 +172,213 @@ a {
       var(--cyan),
       transparent
     );
-
   box-shadow:
     0 0 12px var(--green);
-
   animation:
     navScan 5s linear infinite;
 }
-
-
 /* =========================================================
    BRAND
 ========================================================= */
-
 .brand {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 9px;
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 18px;
-
   font-weight: 700;
-
   letter-spacing: 1px;
-
   text-shadow:
     0 0 8px rgba(0,255,156,0.6);
-
   white-space: nowrap;
-
   transition:
     color 0.3s ease,
     text-shadow 0.3s ease,
     transform 0.3s ease;
 }
-
-
 .brand:hover {
-
   color: white;
-
   text-shadow:
     0 0 8px var(--green),
     0 0 25px rgba(0,255,156,0.7);
-
   transform:
     translateY(-1px);
 }
-
-
 .brand-symbol {
-
   display: inline-block;
-
   color: var(--cyan);
-
   font-size: 22px;
-
   animation:
     starPulse 2.5s ease-in-out infinite;
 }
-
-
 .brand-name {
-
   position: relative;
 }
-
-
 /* =========================================================
    NAV STATUS
 ========================================================= */
-
 .nav-status {
-
   display: flex;
-
   align-items: center;
-
   gap: 7px;
-
   margin-left: auto;
-
   color: var(--muted);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 10px;
-
   letter-spacing: 1px;
-
   white-space: nowrap;
 }
-
-
 .status-dot {
-
   width: 7px;
-
   height: 7px;
-
   border-radius: 50%;
-
   background: var(--green);
-
   box-shadow:
     0 0 7px var(--green),
     0 0 15px rgba(0,255,156,0.6);
-
   animation:
     pulse 1.5s infinite;
 }
-
-
 /* =========================================================
    NAV LINKS
 ========================================================= */
-
 .nav-links {
-
   list-style: none;
-
   display: flex;
-
   align-items: center;
-
   gap: 5px;
 }
-
-
 .nav-links > li {
-
   position: relative;
 }
-
-
 .nav-links > li > a {
-
   position: relative;
-
   display: flex;
-
   align-items: center;
-
   gap: 5px;
-
   padding: 25px 10px;
-
   color: var(--muted);
-
   font-size: 13px;
-
   white-space: nowrap;
-
   transition:
     color 0.3s ease,
     text-shadow 0.3s ease;
 }
-
-
 /* 左侧 ./ */
-
 .nav-links > li > a::before {
-
   content: "./";
-
   color: var(--green);
-
   opacity: 0.55;
-
   font-family:
     Consolas,
     monospace;
-
   transition:
     opacity 0.3s ease;
 }
-
-
 /* 底部线 */
-
 .nav-links > li > a::after {
-
   content: "";
-
   position: absolute;
-
   left: 10px;
-
   right: 10px;
-
   bottom: 17px;
-
   height: 1px;
-
   background:
     linear-gradient(
       90deg,
       var(--green),
       var(--cyan)
     );
-
   transform:
     scaleX(0);
-
   transform-origin:
     left;
-
   transition:
     transform 0.3s ease;
-
   box-shadow:
     0 0 8px var(--green);
 }
-
-
 .nav-links > li > a:hover {
-
   color: var(--green);
-
   text-shadow:
     0 0 8px rgba(0,255,156,0.7);
 }
-
-
 .nav-links > li > a:hover::before {
-
   opacity: 1;
 }
-
-
 .nav-links > li > a:hover::after {
-
   transform:
     scaleX(1);
 }
-
-
 /* =========================================================
    DROPDOWN
 ========================================================= */
-
 .nav-dropdown {
-
   position: relative;
 }
-
-
 .dropdown-trigger {
-
   cursor: pointer;
 }
-
-
 .dropdown-arrow {
-
   color: var(--green);
-
   font-size: 14px;
-
   line-height: 1;
-
   transition:
     transform 0.3s ease;
 }
-
-
 /* 鼠标移入朋友圈时箭头旋转 */
-
 .nav-dropdown:hover
 .dropdown-arrow {
-
   transform:
     rotate(180deg);
 }
-
-
 /* =========================================================
    DROPDOWN PANEL
+   默认完全隐藏，hover 才展开
 ========================================================= */
-
 .dropdown-menu {
-
   position: absolute;
-
   top: calc(100% - 1px);
-
   left: 50%;
-
   min-width: 225px;
-
   padding: 8px;
-
   list-style: none;
-
   background:
     rgba(2, 8, 11, 0.96);
-
   border:
     1px solid var(--border);
-
   box-shadow:
     0 20px 50px rgba(0,0,0,0.55),
     0 0 25px rgba(0,255,156,0.08);
-
   backdrop-filter:
     blur(18px);
-
   -webkit-backdrop-filter:
     blur(18px);
-
+  /* 默认隐藏 */
   opacity: 0;
-
   visibility: hidden;
-
   transform:
     translate(-50%, -10px);
-
   transition:
     opacity 0.25s ease,
     transform 0.25s ease,
     visibility 0.25s ease;
+  /* 防止鼠标移到间隙时收起 */
+  margin-top: 1px;
 }
-
-
 /* 顶部装饰线 */
-
 .dropdown-menu::before {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 15%;
-
   width: 70%;
-
   height: 1px;
-
   background:
     linear-gradient(
       90deg,
@@ -623,403 +387,236 @@ a {
       var(--cyan),
       transparent
     );
-
   box-shadow:
     0 0 10px var(--green);
 }
-
-
 /* 小三角 */
-
 .dropdown-menu::after {
-
   content: "";
-
   position: absolute;
-
   top: -5px;
-
   left: 50%;
-
   width: 8px;
-
   height: 8px;
-
   background:
     #02080b;
-
   border-left:
     1px solid var(--border);
-
   border-top:
     1px solid var(--border);
-
   transform:
     translateX(-50%)
     rotate(45deg);
 }
-
-
 /* Hover 展开 */
-
 .nav-dropdown:hover .dropdown-menu {
-
   opacity: 1;
-
   visibility: visible;
-
   transform:
     translate(-50%, 0);
 }
-
-
 /* =========================================================
    DROPDOWN ITEMS
 ========================================================= */
-
 .dropdown-menu li {
-
   width: 100%;
 }
-
-
 .dropdown-menu li a {
-
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   padding: 13px 14px;
-
   color: var(--muted);
-
   font-size: 12px;
-
   border:
     1px solid transparent;
-
   transition:
     color 0.25s ease,
     background 0.25s ease,
     border-color 0.25s ease,
     padding-left 0.25s ease;
 }
-
-
 .dropdown-menu li a:hover {
-
   color: var(--green);
-
   background:
     rgba(0,255,156,0.055);
-
   border-color:
     rgba(0,255,156,0.18);
-
   padding-left: 19px;
-
   text-shadow:
     0 0 8px rgba(0,255,156,0.5);
 }
-
-
 .dropdown-icon {
-
   width: 30px;
-
   color: var(--cyan);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 10px;
-
   text-align: center;
 }
-
-
 /* =========================================================
    HERO
 ========================================================= */
-
 .hero {
-
   position: relative;
-
   max-width: 1350px;
-
   min-height: 760px;
-
   margin: 0 auto;
-
   padding:
     100px 5%;
-
   display: grid;
-
   grid-template-columns:
     1.05fr 0.95fr;
-
   gap: clamp(50px, 7vw, 100px);
-
   align-items: center;
 }
-
-
 /* Hero 背景光 */
-
 .hero::before {
-
   content: "";
-
   position: absolute;
-
   width: 420px;
-
   height: 420px;
-
   left: -180px;
-
   top: 120px;
-
   border-radius: 50%;
-
   background:
     rgba(0,255,156,0.05);
-
   filter:
     blur(100px);
-
   pointer-events: none;
-
   animation:
     floatingGlow 7s ease-in-out infinite;
 }
-
-
 /* =========================================================
    HERO LEFT
 ========================================================= */
-
 .hero-left {
-
   min-width: 0;
-
   animation:
     pageEnter 0.8s ease both;
 }
-
-
 /* =========================================================
    TERMINAL
 ========================================================= */
-
 .terminal {
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 14px;
-
   margin-bottom: 7px;
 }
-
-
 .terminal::before {
-
   content: "$ ";
-
   color: var(--cyan);
 }
-
-
 .terminal-output {
-
   color: var(--cyan);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 14px;
-
   margin-bottom: 10px;
-
   text-shadow:
     0 0 8px rgba(0,234,255,0.35);
 }
-
-
 .code-comment {
-
   color: #4d7168;
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 13px;
-
   margin-bottom: 20px;
 }
-
-
 /* =========================================================
    HERO TITLE
 ========================================================= */
-
 .hero h1 {
-
   position: relative;
-
   margin-bottom: 35px;
-
   color: white;
-
   font-family:
     Consolas,
     monospace;
-
   font-size:
     clamp(65px, 8vw, 110px);
-
   line-height: 0.92;
-
   letter-spacing: -6px;
-
   text-shadow:
     0 0 20px rgba(0,255,156,0.2);
-
   animation:
     titleGlitch 7s infinite;
 }
-
-
 .hero h1 span {
-
   color: var(--green);
-
   text-shadow:
     0 0 8px var(--green),
     0 0 25px rgba(0,255,156,0.7),
     0 0 60px rgba(0,255,156,0.3);
 }
-
-
 .cursor {
-
   display: inline-block;
-
   width: 10px;
-
   height: 76px;
-
   margin-left: 12px;
-
   background: var(--green);
-
   vertical-align: bottom;
-
   box-shadow:
     0 0 12px var(--green),
     0 0 30px rgba(0,255,156,0.4);
-
   animation:
     blink 1s infinite;
 }
-
-
 /* =========================================================
    HERO DESCRIPTION
 ========================================================= */
-
 .hero-description {
-
   max-width: 650px;
-
   margin-bottom: 30px;
-
   color: var(--muted);
-
   font-size: 16px;
-
   line-height: 2;
 }
-
-
 /* =========================================================
    HERO BUTTONS
 ========================================================= */
-
 .hero-buttons {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 12px;
-
   margin-bottom: 35px;
 }
-
-
 .btn {
-
   position: relative;
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding:
     11px 20px;
-
   color: var(--green);
-
   background:
     rgba(0,255,156,0.025);
-
   border:
     1px solid var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 13px;
-
   overflow: hidden;
-
   transition:
     color 0.3s ease,
     background 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.3s ease;
 }
-
-
 .btn::before {
-
   content: "";
-
   position: absolute;
-
   left: -100%;
-
   top: 0;
-
   width: 100%;
-
   height: 100%;
-
   background:
     linear-gradient(
       90deg,
@@ -1027,136 +624,81 @@ a {
       rgba(255,255,255,0.18),
       transparent
     );
-
   transition:
     left 0.5s ease;
 }
-
-
 .btn:hover::before {
-
   left: 100%;
 }
-
-
 .btn:hover {
-
   color: #00130b;
-
   background: var(--green);
-
   box-shadow:
     0 0 10px var(--green),
     0 0 35px rgba(0,255,156,0.35);
-
   transform:
     translateY(-3px);
 }
-
-
 .btn-secondary {
-
   color: var(--cyan);
-
   border-color: var(--cyan);
 }
-
-
 .btn-secondary:hover {
-
   color: #001014;
-
   background: var(--cyan);
-
   box-shadow:
     0 0 10px var(--cyan),
     0 0 35px rgba(0,234,255,0.35);
 }
-
-
 /* =========================================================
    TERMINAL LINE
 ========================================================= */
-
 .terminal-line {
-
   color: #58736d;
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 12px;
 }
-
-
 .terminal-line > span:first-child {
-
   color: var(--green);
-
   text-shadow:
     0 0 6px rgba(0,255,156,0.5);
 }
-
-
 .typing-command {
-
   display: inline-block;
-
   overflow: hidden;
-
   white-space: nowrap;
-
   border-right:
     1px solid var(--green);
-
   animation:
     typing 4s steps(24, end) infinite,
     commandCursor 0.7s step-end infinite;
 }
-
-
 /* =========================================================
    CODE WINDOW
 ========================================================= */
-
 .code-window {
-
   position: relative;
-
   overflow: hidden;
-
   background:
     rgba(2, 9, 13, 0.92);
-
   border:
     1px solid var(--border);
-
   box-shadow:
     0 0 35px rgba(0,255,156,0.07),
     0 25px 80px rgba(0,0,0,0.35);
-
   animation:
     pageEnterRight 0.9s 0.15s ease both;
 }
-
-
 /* 顶部动态光 */
-
 .code-window::before {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: -30%;
-
   width: 30%;
-
   height: 2px;
-
   background:
     linear-gradient(
       90deg,
@@ -1165,33 +707,20 @@ a {
       var(--cyan),
       transparent
     );
-
   box-shadow:
     0 0 15px var(--green);
-
   animation:
     codeScan 4s linear infinite;
-
   z-index: 3;
 }
-
-
 /* 代码窗口扫描 */
-
 .code-window::after {
-
   content: "";
-
   position: absolute;
-
   left: 0;
-
   right: 0;
-
   top: -20%;
-
   height: 30%;
-
   background:
     linear-gradient(
       to bottom,
@@ -1199,365 +728,211 @@ a {
       rgba(0,255,156,0.025),
       transparent
     );
-
   pointer-events: none;
-
   animation:
     windowScan 5s linear infinite;
 }
-
-
 /* =========================================================
    WINDOW TOP
 ========================================================= */
-
 .window-top {
-
   position: relative;
-
   z-index: 2;
-
   height: 48px;
-
   padding:
     0 16px;
-
   display: flex;
-
   align-items: center;
-
   border-bottom:
     1px solid rgba(0,255,156,0.12);
-
   background:
     rgba(0,255,156,0.015);
 }
-
-
 .window-dots {
-
   display: flex;
-
   gap: 7px;
 }
-
-
 .window-dots span {
-
   width: 9px;
-
   height: 9px;
-
   border-radius: 50%;
-
   border:
     1px solid var(--green);
-
   box-shadow:
     0 0 5px rgba(0,255,156,0.3);
 }
-
-
 .window-dots span:nth-child(2) {
-
   border-color:
     var(--cyan);
 }
-
-
 .window-dots span:nth-child(3) {
-
   border-color:
     var(--purple);
 }
-
-
 .window-title {
-
   margin:
     0 auto;
-
   color: var(--muted);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 11px;
-
   letter-spacing: 0.5px;
 }
-
-
 .window-status {
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 9px;
-
   text-shadow:
     0 0 7px var(--green);
-
   animation:
     pulse 1.8s infinite;
 }
-
-
 /* =========================================================
    CODE CONTENT
 ========================================================= */
-
 .code-content {
-
   position: relative;
-
   min-height: 430px;
-
   padding:
     30px 22px;
-
   color: #b8d8d0;
-
   font-family:
     Consolas,
     "Microsoft YaHei",
     monospace;
-
   font-size: 13px;
-
   line-height: 2.15;
-
   overflow: hidden;
 }
-
-
 .code-line {
-
   display: flex;
-
   min-height: 28px;
-
   white-space: pre;
-
   transition:
     background 0.2s ease;
 }
-
-
 .code-line:hover {
-
   background:
     rgba(0,255,156,0.04);
 }
-
-
 .line-number {
-
   display: inline-block;
-
   width: 35px;
-
   margin-right: 15px;
-
   color:
     rgba(120,149,141,0.3);
-
   user-select: none;
-
   text-align: right;
 }
-
-
 .indent {
-
   padding-left: 25px;
 }
-
-
 .indent-2 {
-
   padding-left: 50px;
 }
-
-
 /* =========================================================
    CODE COLORS
 ========================================================= */
-
 .code-purple {
-
   color: var(--purple);
-
   text-shadow:
     0 0 5px rgba(168,85,247,0.25);
 }
-
-
 .code-green {
-
   color: var(--green);
-
   text-shadow:
     0 0 7px rgba(0,255,156,0.3);
 }
-
-
 .code-cyan {
-
   color: var(--cyan);
-
   text-shadow:
     0 0 7px rgba(0,234,255,0.3);
 }
-
-
 .code-yellow {
-
   color: var(--yellow);
 }
-
-
 /* =========================================================
    CODE CURSOR
 ========================================================= */
-
 .code-cursor {
-
   margin-top: 5px;
-
   color: var(--green);
-
   animation:
     blink 0.9s infinite;
-
   text-shadow:
     0 0 8px var(--green);
 }
-
-
 /* =========================================================
    CODE FOOTER
 ========================================================= */
-
 .code-footer {
-
   position: relative;
-
   z-index: 2;
-
   min-height: 35px;
-
   padding:
     0 15px;
-
   display: flex;
-
   align-items: center;
-
   gap: 18px;
-
   color:
     var(--muted2);
-
   border-top:
     1px solid rgba(0,255,156,0.1);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 9px;
 }
-
-
 .code-footer-online {
-
   margin-left: auto;
-
   color: var(--green);
-
   text-shadow:
     0 0 6px var(--green);
 }
-
-
 /* =========================================================
    SYSTEM PANEL
 ========================================================= */
-
 .system-panel {
-
   max-width: 1150px;
-
   margin:
     0 auto 70px;
-
   padding:
     0 5%;
 }
-
-
 .system-panel-inner {
-
   display: grid;
-
   grid-template-columns:
     repeat(4, 1fr);
-
   border:
     1px solid var(--border);
-
   background:
     rgba(0,255,156,0.018);
 }
-
-
 .system-item {
-
   position: relative;
-
   min-height: 85px;
-
   padding:
     18px 22px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   border-right:
     1px solid var(--border);
-
   overflow: hidden;
 }
-
-
 .system-item:last-child {
-
   border-right: 0;
 }
-
-
 .system-item::before {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: -100%;
-
   width: 100%;
-
   height: 1px;
-
   background:
     linear-gradient(
       90deg,
@@ -1565,111 +940,67 @@ a {
       var(--green),
       transparent
     );
-
   transition:
     left 0.5s ease;
 }
-
-
 .system-item:hover::before {
-
   left: 100%;
 }
-
-
 .system-label {
-
   color:
     var(--muted2);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 9px;
-
   letter-spacing: 1px;
 }
-
-
 .system-item strong {
-
   color:
     var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 13px;
-
   font-weight: 500;
-
   text-shadow:
     0 0 8px rgba(0,255,156,0.3);
 }
-
-
 /* =========================================================
    STATS
 ========================================================= */
-
 .stats {
-
   max-width: 1150px;
-
   margin:
     0 auto;
-
   padding:
     0 5% 80px;
-
   display: grid;
-
   grid-template-columns:
     repeat(4, 1fr);
-
   gap: 15px;
 }
-
-
 .stat {
-
   position: relative;
-
   padding: 25px;
-
   text-align: center;
-
   background:
     rgba(0,255,156,0.02);
-
   border:
     1px solid var(--border);
-
   overflow: hidden;
-
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
-
-
 .stat::before {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: -100%;
-
   width: 100%;
-
   height: 1px;
-
   background:
     linear-gradient(
       90deg,
@@ -1677,614 +1008,357 @@ a {
       var(--green),
       transparent
     );
-
   transition:
     left 0.5s ease;
 }
-
-
 .stat:hover::before {
-
   left: 100%;
 }
-
-
 .stat:hover {
-
   transform:
     translateY(-5px);
-
   border-color:
     var(--green);
-
   box-shadow:
     0 0 25px rgba(0,255,156,0.1);
 }
-
-
 .stat strong {
-
   display: block;
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 32px;
-
   text-shadow:
     0 0 12px rgba(0,255,156,0.5);
 }
-
-
 .stat span {
-
   color: var(--muted);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 10px;
-
   letter-spacing: 1px;
 }
-
-
 /* =========================================================
    SECTION
 ========================================================= */
-
 .section {
-
   max-width: 1150px;
-
   margin:
     0 auto;
-
   padding:
     90px 5%;
 }
-
-
 .section-head {
-
   display: flex;
-
   align-items: end;
-
   justify-content: space-between;
-
   margin-bottom: 40px;
-
   padding-bottom: 20px;
-
   border-bottom:
     1px solid var(--border);
 }
-
-
 .eyebrow {
-
   margin-bottom: 8px;
-
   color: var(--cyan);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 11px;
-
   letter-spacing: 2px;
-
   text-shadow:
     0 0 8px rgba(0,234,255,0.25);
 }
-
-
 .section-head h2 {
-
   color: white;
-
   font-size: 35px;
-
   line-height: 1.2;
 }
-
-
 .section-head > span {
-
   color: var(--muted);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 10px;
-
   letter-spacing: 1px;
 }
-
-
 .section-link {
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 11px;
-
   transition:
     color 0.25s ease,
     text-shadow 0.25s ease;
 }
-
-
 .section-link:hover {
-
   color: white;
-
   text-shadow:
     0 0 8px var(--green);
 }
-
-
 /* =========================================================
    PREVIEW GRID
 ========================================================= */
-
 .preview-grid {
-
   display: grid;
-
   grid-template-columns:
     repeat(3, 1fr);
-
   gap: 18px;
 }
-
-
 .preview-card {
-
   position: relative;
-
   min-height: 260px;
-
   padding: 28px;
-
   background:
     var(--card);
-
   border:
     1px solid var(--border);
-
   overflow: hidden;
-
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
     box-shadow 0.35s ease;
 }
-
-
 .preview-card::before {
-
   content: "";
-
   position: absolute;
-
   left: 0;
-
   top: 0;
-
   width: 3px;
-
   height: 100%;
-
   background:
     var(--green);
-
   box-shadow:
     0 0 15px var(--green);
-
   transform:
     scaleY(0);
-
   transform-origin:
     bottom;
-
   transition:
     transform 0.35s ease;
 }
-
-
 .preview-card::after {
-
   content: "";
-
   position: absolute;
-
   width: 120px;
-
   height: 120px;
-
   right: -50px;
-
   bottom: -50px;
-
   border-radius: 50%;
-
   background:
     rgba(0,255,156,0.05);
-
   filter:
     blur(30px);
-
   transition:
     transform 0.5s ease;
 }
-
-
 .preview-card:hover {
-
   transform:
     translateY(-7px);
-
   border-color:
     var(--green);
-
   box-shadow:
     0 20px 50px rgba(0,0,0,0.3),
     0 0 25px rgba(0,255,156,0.08);
 }
-
-
 .preview-card:hover::before {
-
   transform:
     scaleY(1);
 }
-
-
 .preview-card:hover::after {
-
   transform:
     scale(2);
 }
-
-
 .preview-number {
-
   position: absolute;
-
   top: 12px;
-
   right: 18px;
-
   color:
     rgba(0,255,156,0.12);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 38px;
-
   font-weight: 700;
 }
-
-
 .preview-tag {
-
   display: inline-block;
-
   margin-bottom: 20px;
-
   padding:
     4px 9px;
-
   color: var(--cyan);
-
   border:
     1px solid rgba(0,234,255,0.3);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 10px;
 }
-
-
 .preview-card h3 {
-
   margin-bottom: 12px;
-
   color: white;
-
   font-size: 20px;
 }
-
-
 .preview-card p {
-
   max-width: 300px;
-
   color: var(--muted);
-
   font-size: 13px;
-
   line-height: 1.9;
 }
-
-
 .preview-link {
-
   position: absolute;
-
   left: 28px;
-
   bottom: 22px;
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 10px;
-
   transition:
     transform 0.3s ease,
     text-shadow 0.3s ease;
 }
-
-
 .preview-card:hover .preview-link {
-
   transform:
     translateX(5px);
-
   text-shadow:
     0 0 8px var(--green);
 }
-
-
 /* =========================================================
    ACTIVITY
 ========================================================= */
-
 .activity-section {
-
   padding-top: 50px;
 }
-
-
 .activity-list {
-
   border-top:
     1px solid var(--border);
 }
-
-
 .activity-item {
-
   position: relative;
-
   display: grid;
-
   grid-template-columns:
     100px 1fr 40px;
-
   gap: 20px;
-
   align-items: center;
-
   padding:
     25px 10px;
-
   border-bottom:
     1px solid rgba(0,255,156,0.1);
-
   transition:
     background 0.3s ease,
     padding-left 0.3s ease;
 }
-
-
 .activity-item:hover {
-
   padding-left: 18px;
-
   background:
     rgba(0,255,156,0.025);
 }
-
-
 .activity-item time {
-
   color: var(--cyan);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 12px;
 }
-
-
 .activity-type {
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 9px;
-
   letter-spacing: 1px;
 }
-
-
 .activity-item h3 {
-
   margin:
     3px 0 4px;
-
   color: white;
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 14px;
 }
-
-
 .activity-item p {
-
   color: var(--muted);
-
   font-size: 12px;
 }
-
-
 .activity-arrow {
-
   color: var(--green);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 18px;
-
   transition:
     transform 0.3s ease;
 }
-
-
 .activity-item:hover .activity-arrow {
-
   transform:
     translateX(5px);
-
   text-shadow:
     0 0 8px var(--green);
 }
-
-
 /* =========================================================
    ABOUT PREVIEW
 ========================================================= */
-
 .about-preview {
-
   max-width: 1150px;
-
   margin:
     0 auto;
-
   padding:
     100px 5%;
-
   display: grid;
-
   grid-template-columns:
     0.8fr 1.2fr;
-
   gap: 80px;
-
   border-top:
     1px solid var(--border);
 }
-
-
 .about-preview h2 {
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 42px;
-
   line-height: 1.05;
 }
-
-
 .about-preview h2 span {
-
   color: var(--green);
-
   text-shadow:
     0 0 15px rgba(0,255,156,0.4);
 }
-
-
 .about-preview-copy {
-
   color: var(--muted);
-
   font-size: 14px;
-
   line-height: 2;
 }
-
-
 .about-preview-copy > p {
-
   margin-bottom: 18px;
 }
-
-
 /* =========================================================
    TERMINAL BOX
 ========================================================= */
-
 .terminal-box {
-
   position: relative;
-
   margin-bottom: 25px;
-
   padding: 20px;
-
   background:
     rgba(0,255,156,0.025);
-
   border:
     1px solid var(--border);
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 12px;
-
   overflow: hidden;
 }
-
-
 .terminal-box::before {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: -100%;
-
   width: 100%;
-
   height: 1px;
-
   background:
     linear-gradient(
       90deg,
@@ -2292,70 +1366,43 @@ a {
       var(--green),
       transparent
     );
-
   animation:
     terminalScan 4s linear infinite;
 }
-
-
 .terminal-box p {
-
   margin-bottom: 3px;
 }
-
-
 .green {
-
   color: var(--green);
-
   text-shadow:
     0 0 7px rgba(0,255,156,0.5);
 }
-
-
 /* =========================================================
-   FOOTER
+   FOOTER 居中修复
 ========================================================= */
-
 footer {
-
   position: relative;
-
+  width: 100%;
   padding:
     45px 20px;
-
   border-top:
     1px solid var(--border);
-
   text-align: center;
-
   color:
     #49645e;
-
   font-family:
     Consolas,
     monospace;
-
   font-size: 11px;
-
   line-height: 2.2;
 }
-
-
 footer::before {
-
   content: "";
-
   position: absolute;
-
   top: -1px;
-
   left: 35%;
-
   width: 30%;
-
   height: 1px;
-
   background:
     linear-gradient(
       90deg,
@@ -2363,958 +1410,564 @@ footer::before {
       var(--green),
       transparent
     );
-
   box-shadow:
     0 0 10px var(--green);
 }
-
-
 .footer-terminal {
-
   margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
 }
-
-
 footer .footer-terminal > span:first-child {
-
   color: var(--green);
 }
-
-
 footer > div:last-child span {
-
   color: var(--green);
-
   text-shadow:
     0 0 7px rgba(0,255,156,0.4);
 }
-
-
 .footer-cursor {
-
   color: var(--green);
-
   animation:
     blink 1s infinite;
 }
-
-
+/* =========================================================
+   子页面通用内容样式
+========================================================= */
+.page-content {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 80px 5% 100px;
+  animation: pageEnter 0.8s ease both;
+}
+.page-title {
+  margin-bottom: 15px;
+  font-family: Consolas, monospace;
+  font-size: clamp(40px, 6vw, 65px);
+  line-height: 1;
+  color: white;
+}
+.page-title span {
+  color: var(--green);
+  text-shadow: 0 0 8px var(--green), 0 0 25px rgba(0,255,156,0.5);
+}
+.page-subtitle {
+  margin-bottom: 50px;
+  color: var(--muted);
+  font-family: Consolas, monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
 /* =========================================================
    ANIMATIONS
 ========================================================= */
-
-
 /* 背景网格 */
-
 @keyframes gridMove {
-
   0% {
     background-position:
       0 0,
       0 0;
   }
-
   100% {
     background-position:
       45px 45px,
       45px 45px;
   }
-
 }
-
-
 /* 导航扫描 */
-
 @keyframes navScan {
-
   0% {
     left: -30%;
   }
-
   100% {
     left: 100%;
   }
-
 }
-
-
 /* 状态呼吸 */
-
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 1;
     transform: scale(1);
   }
-
   50% {
     opacity: 0.35;
     transform: scale(0.75);
   }
-
 }
-
-
 /* 光标闪烁 */
-
 @keyframes blink {
-
   0%,
   45% {
     opacity: 1;
   }
-
   46%,
   100% {
     opacity: 0;
   }
-
 }
-
-
 /* 品牌星星 */
-
 @keyframes starPulse {
-
   0%,
   100% {
     transform:
       rotate(0deg)
       scale(1);
-
     text-shadow:
       0 0 7px var(--cyan);
   }
-
   50% {
     transform:
       rotate(12deg)
       scale(1.18);
-
     text-shadow:
       0 0 8px var(--cyan),
       0 0 22px rgba(0,234,255,0.7);
   }
-
 }
-
-
 /* 页面进入 */
-
 @keyframes pageEnter {
-
   from {
     opacity: 0;
     transform:
       translateY(20px);
   }
-
   to {
     opacity: 1;
     transform:
       translateY(0);
   }
-
 }
-
-
 /* 代码窗口进入 */
-
 @keyframes pageEnterRight {
-
   from {
     opacity: 0;
     transform:
       translateX(35px);
   }
-
   to {
     opacity: 1;
     transform:
       translateX(0);
   }
-
  }
-
-
 /* 背景光 */
-
 @keyframes floatingGlow {
-
   0%,
   100% {
     transform:
       translate(0, 0);
   }
-
   50% {
     transform:
       translate(60px, 30px);
   }
-
 }
-
-
 /* 代码顶部扫描 */
-
 @keyframes codeScan {
-
   0% {
     left: -30%;
   }
-
   100% {
     left: 130%;
   }
-
 }
-
-
 /* 代码窗口扫描 */
-
 @keyframes windowScan {
-
   0% {
     top: -30%;
   }
-
   100% {
     top: 120%;
   }
-
 }
-
-
 /* Terminal 扫描 */
-
 @keyframes terminalScan {
-
   0% {
     left: -100%;
   }
-
   100% {
     left: 100%;
   }
-
 }
-
-
 /* 标题轻微 glitch */
-
 @keyframes titleGlitch {
-
   0%,
   91%,
   100% {
     transform:
       translate(0);
   }
-
   92% {
     transform:
       translate(-1px, 1px);
   }
-
   93% {
     transform:
       translate(1px, -1px);
   }
-
   94% {
     transform:
       translate(0);
   }
-
 }
-
-
 /* 输入文字 */
-
 @keyframes typing {
-
   0%,
   10% {
     width: 0;
   }
-
   45%,
   75% {
     width: 24ch;
   }
-
   90%,
   100% {
     width: 0;
   }
-
 }
-
-
 @keyframes commandCursor {
-
   0%,
   100% {
     border-color:
       var(--green);
   }
-
   50% {
     border-color:
       transparent;
   }
-
 }
-
-
 /* =========================================================
    TABLET
 ========================================================= */
-
 @media (max-width: 1100px) {
-
-
   .nav {
-
     padding:
       0 4%;
-
     gap: 18px;
-
   }
-
-
   .nav-links {
-
     gap: 0;
-
   }
-
-
   .nav-links > li > a {
-
     padding:
       25px 7px;
-
     font-size: 12px;
-
   }
-
-
   .hero {
-
     gap: 45px;
-
   }
-
-
   .hero h1 {
-
     font-size:
       clamp(58px, 8vw, 85px);
-
   }
-
-
 }
-
-
 /* =========================================================
    MOBILE / TABLET
 ========================================================= */
-
 @media (max-width: 900px) {
-
-
   /* ---------------------------------
      NAV
   --------------------------------- */
-
   .nav {
-
     min-height: auto;
-
     padding:
       16px 5%;
-
     flex-wrap: wrap;
-
   }
-
-
   .brand {
-
     font-size: 17px;
-
   }
-
-
   .nav-status {
-
     display: none;
-
   }
-
-
   .nav nav {
-
     width: 100%;
-
   }
-
-
   .nav-links {
-
     width: 100%;
-
     justify-content:
       center;
-
     flex-wrap: wrap;
-
     gap: 2px;
-
   }
-
-
   .nav-links > li > a {
-
     padding:
       9px 7px;
-
     font-size: 11px;
-
   }
-
-
   .nav-links > li > a::after {
-
     bottom: 3px;
-
     left: 7px;
-
     right: 7px;
-
   }
-
-
   /* ---------------------------------
      Dropdown
   --------------------------------- */
-
   .dropdown-menu {
-
     left: 50%;
-
     min-width: 200px;
-
   }
-
-
   /* ---------------------------------
      Hero
   --------------------------------- */
-
   .hero {
-
     grid-template-columns:
       1fr;
-
     min-height: auto;
-
     padding:
       80px 5% 70px;
-
     gap: 60px;
-
   }
-
-
   .hero h1 {
-
     font-size:
       clamp(58px, 12vw, 85px);
-
   }
-
-
   .code-window {
-
     max-width: 700px;
-
     width: 100%;
-
     margin: 0 auto;
-
   }
-
-
   /* ---------------------------------
      System Panel
   --------------------------------- */
-
   .system-panel-inner {
-
     grid-template-columns:
       repeat(2, 1fr);
-
   }
-
-
   .system-item:nth-child(2) {
-
     border-right: 0;
-
   }
-
-
   .system-item:nth-child(-n+2) {
-
     border-bottom:
       1px solid var(--border);
-
   }
-
-
   /* ---------------------------------
      Stats
   --------------------------------- */
-
   .stats {
-
     grid-template-columns:
       repeat(2, 1fr);
-
   }
-
-
   /* ---------------------------------
      Preview
   --------------------------------- */
-
   .preview-grid {
-
     grid-template-columns:
       1fr;
-
   }
-
-
   /* ---------------------------------
      About
   --------------------------------- */
-
   .about-preview {
-
     grid-template-columns:
       1fr;
-
     gap: 40px;
-
   }
-
-
 }
-
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
-
 @media (max-width: 600px) {
-
-
   /* ---------------------------------
      Navigation
   --------------------------------- */
-
   .nav {
-
     padding:
       14px 4%;
-
   }
-
-
   .brand {
-
     width: 100%;
-
     justify-content:
       center;
-
     margin-bottom: 5px;
-
   }
-
-
   .nav-links {
-
     gap: 0;
-
   }
-
-
   .nav-links > li > a {
-
     padding:
       8px 5px;
-
     font-size: 10px;
-
   }
-
-
   .nav-links > li > a::before {
-
     display: none;
-
   }
-
-
   /* 手机端朋友圈下拉菜单 */
-
   .dropdown-menu {
-
     min-width: 190px;
-
   }
-
-
   /* ---------------------------------
      Hero
   --------------------------------- */
-
   .hero {
-
     padding:
       60px 5% 55px;
-
   }
-
-
   .hero h1 {
-
     font-size:
       50px;
-
     letter-spacing:
       -4px;
-
   }
-
-
   .cursor {
-
     width: 7px;
-
     height: 42px;
-
     margin-left: 7px;
-
   }
-
-
   .hero-description {
-
     font-size: 14px;
-
   }
-
-
   .hero-buttons {
-
     flex-direction:
       column;
-
     align-items:
       stretch;
-
   }
-
-
   .btn {
-
     width: 100%;
-
   }
-
-
   .terminal-line {
-
     font-size: 10px;
-
   }
-
-
   /* ---------------------------------
      Code Window
   --------------------------------- */
-
   .window-top {
-
     padding:
       0 10px;
-
   }
-
-
   .code-content {
-
     padding:
       22px 10px;
-
     font-size: 10px;
-
     overflow-x: auto;
-
   }
-
-
   .line-number {
-
     width: 25px;
-
     margin-right: 8px;
-
   }
-
-
   .indent {
-
     padding-left: 15px;
-
   }
-
-
   .indent-2 {
-
     padding-left: 30px;
-
   }
-
-
   .code-footer {
-
     gap: 10px;
-
   }
-
-
   /* ---------------------------------
      System Panel
   --------------------------------- */
-
   .system-panel {
-
     margin-bottom: 45px;
-
   }
-
-
   .system-panel-inner {
-
     grid-template-columns:
       1fr;
-
   }
-
-
   .system-item {
-
     min-height: 75px;
-
     border-right: 0;
-
     border-bottom:
       1px solid var(--border);
-
   }
-
-
   .system-item:last-child {
-
     border-bottom: 0;
-
   }
-
-
   /* ---------------------------------
      Stats
   --------------------------------- */
-
   .stats {
-
     grid-template-columns:
       repeat(2, 1fr);
-
     gap: 8px;
-
   }
-
-
   .stat {
-
     padding:
       18px 8px;
-
   }
-
-
   .stat strong {
-
     font-size: 27px;
-
   }
-
-
   .stat span {
-
     font-size: 8px;
-
   }
-
-
   /* ---------------------------------
      Sections
   --------------------------------- */
-
   .section {
-
     padding:
       65px 5%;
-
   }
-
-
   .section-head {
-
     flex-direction:
       column;
-
     align-items:
       flex-start;
-
     gap: 10px;
-
   }
-
-
   .section-head h2 {
-
     font-size: 29px;
-
   }
-
-
   /* ---------------------------------
      Preview Cards
   --------------------------------- */
-
   .preview-card {
-
     min-height: 245px;
-
   }
-
-
   /* ---------------------------------
      Activity
   --------------------------------- */
-
   .activity-item {
-
     grid-template-columns:
       55px 1fr 20px;
-
     gap: 10px;
-
     padding:
       20px 5px;
-
   }
-
-
   .activity-item h3 {
-
     font-size: 12px;
-
   }
-
-
   .activity-item p {
-
     font-size: 11px;
-
   }
-
-
   .activity-arrow {
-
     font-size: 14px;
-
   }
-
-
   /* ---------------------------------
      About
   --------------------------------- */
-
   .about-preview {
-
     padding:
       70px 5%;
-
   }
-
-
   .about-preview h2 {
-
     font-size: 35px;
-
   }
-
-
   /* ---------------------------------
      Footer
   --------------------------------- */
-
   footer {
-
     padding:
       35px 15px;
-
     font-size: 9px;
-
   }
-
 }
-
-
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
-
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
-
     animation-duration:
       0.01ms !important;
-
     animation-iteration-count:
       1 !important;
-
     scroll-behavior:
       auto !important;
-
     transition-duration:
       0.01ms !important;
-
   }
-
 }
-```
