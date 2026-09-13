@@ -1,1139 +1,292 @@
-```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="一颗新星的个人博客——记录 Java 学习、软件工程、项目实践与大学生活。"
-  >
-
-  <meta
-    name="keywords"
-    content="一颗新星, Java, 软件工程, 编程, 个人博客, 学习记录"
-  >
-
-  <meta name="author" content="一颗新星">
-
   <title>一颗新星 · Personal System</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-<!-- ==================================================
-     Navigation
-================================================== -->
-
-<header class="nav">
-
-  <!-- 左上角品牌 -->
-  <a class="brand" href="index.html">
-
+<!-- 导航栏 -->
+<nav class="nav">
+  <a href="index.html" class="brand">
     <span class="brand-symbol">✦</span>
-
-    <span class="brand-name">
-      一颗新星
-    </span>
-
+    <span class="brand-name">一颗新星</span>
   </a>
 
-
-  <!-- 系统状态 -->
   <div class="nav-status">
-
     <span class="status-dot"></span>
-
-    <span>
-      SYSTEM ONLINE
-    </span>
-
+    SYSTEM ONLINE
   </div>
 
-
-  <!-- 主导航 -->
-  <nav aria-label="主导航">
-
-    <ul class="nav-links">
-
-      <!-- 首页 -->
-      <li>
-        <a href="index.html">
-          首页
-        </a>
-      </li>
-
-
-      <!-- 博客 -->
-      <li>
-        <a href="blog.html">
-          博客
-        </a>
-      </li>
-
-
-      <!-- 朋友圈 -->
-      <li class="nav-dropdown">
-
-        <a
-          href="moments.html"
-          class="dropdown-trigger"
-        >
-          朋友圈
-          <span class="dropdown-arrow">⌄</span>
-        </a>
-
-
-        <!-- 朋友圈下拉菜单 -->
-        <ul class="dropdown-menu">
-
-          <li>
-            <a href="tech.html">
-
-              <span class="dropdown-icon">
-                &gt;_
-              </span>
-
-              <span>
-                技术学习记录
-              </span>
-
-            </a>
-          </li>
-
-
-          <li>
-            <a href="life.html">
-
-              <span class="dropdown-icon">
-                ◇
-              </span>
-
-              <span>
-                日常生活记录
-              </span>
-
-            </a>
-          </li>
-
-        </ul>
-
-      </li>
-
-
-      <!-- 简历 -->
-      <li>
-        <a href="resume.html">
-          简历
-        </a>
-      </li>
-
-
-      <!-- 友链 -->
-      <li>
-        <a href="links.html">
-          友链
-        </a>
-      </li>
-
-
-      <!-- 工具 -->
-      <li>
-        <a href="tools.html">
-          工具
-        </a>
-      </li>
-
-
-      <!-- 关于 -->
-      <li>
-        <a href="about.html">
-          关于
-        </a>
-      </li>
-
-    </ul>
-
-  </nav>
-
-</header>
-
-
-
-<!-- ==================================================
-     Main
-================================================== -->
-
-<main>
-
-
-  <!-- ==================================================
-       Hero
-  ================================================== -->
-
-  <section class="hero" id="home">
-
-
-    <!-- =========================
-         左侧 Hero
-    ========================= -->
-
-    <div class="hero-left">
-
-
-      <!-- Terminal -->
-      <div class="terminal">
-
-        whoami
-
-      </div>
-
-
-      <!-- Terminal Output -->
-      <div class="terminal-output">
-
-        &gt; 一颗新星
-
-      </div>
-
-
-      <!-- 身份信息 -->
-      <p class="code-comment">
-
-        // Software Engineering Student
-
-      </p>
-
-
-      <!-- 主标题 -->
-      <h1>
-
-        HELLO,<br>
-
-        <span>WORLD.</span>
-
-        <i class="cursor"></i>
-
-      </h1>
-
-
-      <!-- 简介 -->
-      <p class="hero-description">
-
-        一个正在学习 Java 的软件工程学生。
-
-        <br>
-
-        写代码、做项目、学技术，
-
-        <br>
-
-        也认真记录大学生活。
-
-      </p>
-
-
-      <!-- 操作按钮 -->
-      <div class="hero-buttons">
-
-
-        <a
-          href="blog.html"
-          class="btn"
-        >
-
-          &gt; ./view-blog
-
-        </a>
-
-
-        <a
-          href="moments.html"
-          class="btn btn-secondary"
-        >
-
-          &gt; ./my-life
-
-        </a>
-
-
-      </div>
-
-
-      <!-- Terminal Command -->
-      <div class="terminal-line">
-
-        <span>
-          root@newstar
-        </span>
-
-        :~$
-
-        <span class="typing-command">
-          ./start_learning.sh
-        </span>
-
-      </div>
-
-
-    </div>
-
-
-
-    <!-- ==================================================
-         右侧动态代码窗口
-    ================================================== -->
-
-    <div class="code-window">
-
-
-      <!-- 窗口顶部 -->
-      <div class="window-top">
-
-
-        <div class="window-dots">
-
-          <span></span>
-          <span></span>
-          <span></span>
-
-        </div>
-
-
-        <div class="window-title">
-
-          developer.java
-
-        </div>
-
-
-        <div class="window-status">
-
-          ● LIVE
-
-        </div>
-
-      </div>
-
-
-
-      <!-- 代码区域 -->
-      <div class="code-content">
-
-
-        <!-- Line 01 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            01
-          </span>
-
-          <span class="code-purple">
-            public class
-          </span>
-
-          <span class="code-green">
-            Developer
-          </span>
-
-          {
-
-        </div>
-
-
-        <!-- Line 02 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            02
-          </span>
-
-          <span class="indent">
-
-          </span>
-
-        </div>
-
-
-        <!-- Line 03 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            03
-          </span>
-
-          <span class="indent">
-
-            <span class="code-purple">
-              String
-            </span>
-
-            name =
-
-            <span class="code-yellow">
-              "一颗新星"
-            </span>;
-
-          </span>
-
-        </div>
-
-
-        <!-- Line 04 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            04
-          </span>
-
-          <span class="indent">
-
-            <span class="code-purple">
-              String
-            </span>
-
-            major =
-
-            <span class="code-yellow">
-              "Software Engineering"
-            </span>;
-
-          </span>
-
-        </div>
-
-
-        <!-- Line 05 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            05
-          </span>
-
-          <span class="indent">
-
-            <span class="code-purple">
-              String
-            </span>
-
-            language =
-
-            <span class="code-yellow">
-              "Java"
-            </span>;
-
-          </span>
-
-        </div>
-
-
-        <!-- Line 06 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            06
-          </span>
-
-        </div>
-
-
-        <!-- Line 07 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            07
-          </span>
-
-          <span class="indent">
-
-            <span class="code-purple">
-              void
-            </span>
-
-            <span class="code-cyan">
-              learning
-            </span>() {
-
-          </span>
-
-        </div>
-
-
-        <!-- Line 08 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            08
-          </span>
-
-          <span class="indent-2">
-
-            System.out.println(
-
-            <span class="code-yellow">
-              "Keep learning..."
-            </span>
-
-            );
-
-          </span>
-
-        </div>
-
-
-        <!-- Line 09 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            09
-          </span>
-
-          <span class="indent">
-
-            }
-
-          </span>
-
-        </div>
-
-
-        <!-- Line 10 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            10
-          </span>
-
-        </div>
-
-
-        <!-- Line 11 -->
-        <div class="code-line">
-
-          <span class="line-number">
-            11
-          </span>
-
-          }
-
-        </div>
-
-
-        <!-- 动态光标 -->
-        <div class="code-cursor">
-
-          ▌
-
-        </div>
-
-      </div>
-
-
-      <!-- 底部状态 -->
-      <div class="code-footer">
-
-        <span>
-          UTF-8
-        </span>
-
-        <span>
-          JAVA
-        </span>
-
-        <span>
-          LF
-        </span>
-
-        <span class="code-footer-online">
-          ● ONLINE
-        </span>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==================================================
-       Dynamic System Panel
-  ================================================== -->
-
-  <section class="system-panel">
-
-
-    <div class="system-panel-inner">
-
-
-      <div class="system-item">
-
-        <span class="system-label">
-          SYSTEM
-        </span>
-
-        <strong>
-          ONLINE
-        </strong>
-
-      </div>
-
-
-      <div class="system-item">
-
-        <span class="system-label">
-          CURRENT_MODE
-        </span>
-
-        <strong>
-          LEARNING
-        </strong>
-
-      </div>
-
-
-      <div class="system-item">
-
-        <span class="system-label">
-          PRIMARY_LANG
-        </span>
-
-        <strong>
-          JAVA
-        </strong>
-
-      </div>
-
-
-      <div class="system-item">
-
-        <span class="system-label">
-          STATUS
-        </span>
-
-        <strong>
-          KEEP BUILDING
-        </strong>
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ==================================================
-       Statistics
-  ================================================== -->
-
-  <section class="stats">
-
-
-    <div class="stat">
-
-      <strong>
-        01
-      </strong>
-
-      <span>
-        JAVA LEARNING
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong>
-        02
-      </strong>
-
-      <span>
-        PROJECTS
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong>
-        03
-      </strong>
-
-      <span>
-        UNIVERSITY
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong>
-        ∞
-      </strong>
-
-      <span>
-        KEEP GROWING
-      </span>
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ==================================================
-       Home Preview
-  ================================================== -->
-
-  <section class="section home-preview">
-
-
-    <div class="section-head">
-
-
-      <div>
-
-        <p class="eyebrow">
-          01 // SYSTEM PREVIEW
-        </p>
-
-        <h2>
-          正在构建
-        </h2>
-
-      </div>
-
-
-      <span>
-        BUILDING MY OWN WORLD
-      </span>
-
-
-    </div>
-
-
-
-    <div class="preview-grid">
-
-
-      <!-- Blog -->
-      <a
-        href="blog.html"
-        class="preview-card"
-      >
-
-        <span class="preview-number">
-          001
-        </span>
-
-        <span class="preview-tag">
-          BLOG
-        </span>
-
-        <h3>
-          学习日志
-        </h3>
-
-        <p>
-          记录 Java、C、软件工程以及项目实践。
-        </p>
-
-        <span class="preview-link">
-          &gt; OPEN_BLOG
-        </span>
-
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="blog.html">博客</a></li>
+    <li class="nav-dropdown">
+      <a href="moments.html" class="dropdown-trigger">
+        朋友圈
+        <span class="dropdown-arrow">⌄</span>
       </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="tech.html">
+            <span class="dropdown-icon">&gt;_</span>
+            技术学习记录
+          </a>
+        </li>
+        <li>
+          <a href="life.html">
+            <span class="dropdown-icon">◇</span>
+            日常生活记录
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li><a href="resume.html">简历</a></li>
+    <li><a href="links.html">友链</a></li>
+    <li><a href="tools.html">工具</a></li>
+    <li><a href="about.html">关于</a></li>
+  </ul>
+</nav>
 
+<!-- Hero 区域 -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="terminal">whoami</div>
+    <div class="terminal-output">&gt; 一颗新星</div>
+    <div class="code-comment">// Software Engineering Student</div>
 
+    <h1>
+      HELLO,<br>
+      <span>WORLD.</span>
+      <span class="cursor"></span>
+    </h1>
 
-      <!-- Moments -->
-      <a
-        href="moments.html"
-        class="preview-card"
-      >
+    <p class="hero-description">
+      一个正在学习 Java 的软件工程学生。<br>
+      写代码、做项目、学技术，也认真记录大学生活。
+    </p>
 
-        <span class="preview-number">
-          002
-        </span>
-
-        <span class="preview-tag">
-          MOMENTS
-        </span>
-
-        <h3>
-          朋友圈
-        </h3>
-
-        <p>
-          记录技术学习，也记录生活中的普通瞬间。
-        </p>
-
-        <span class="preview-link">
-          &gt; OPEN_MOMENTS
-        </span>
-
-      </a>
-
-
-
-      <!-- Resume -->
-      <a
-        href="resume.html"
-        class="preview-card"
-      >
-
-        <span class="preview-number">
-          003
-        </span>
-
-        <span class="preview-tag">
-          RESUME
-        </span>
-
-        <h3>
-          我的简历
-        </h3>
-
-        <p>
-          查看我的学习经历、技能、项目和未来方向。
-        </p>
-
-        <span class="preview-link">
-          &gt; OPEN_RESUME
-        </span>
-
-      </a>
-
-
+    <div class="hero-buttons">
+      <a href="blog.html" class="btn">&gt; ./view-blog</a>
+      <a href="moments.html" class="btn btn-secondary">&gt; ./my-life</a>
     </div>
 
-  </section>
+    <div class="terminal-line">
+      <span>root@newstar</span>:~$ <span class="typing-command">./start_learning.sh</span>
+    </div>
+  </div>
 
-
-
-  <!-- ==================================================
-       Latest Activity
-  ================================================== -->
-
-  <section class="section activity-section">
-
-
-    <div class="section-head">
-
-
-      <div>
-
-        <p class="eyebrow">
-          02 // ACTIVITY
-        </p>
-
-        <h2>
-          最近动态
-        </h2>
-
+  <div class="code-window">
+    <div class="window-top">
+      <div class="window-dots">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-
-
-      <a
-        href="moments.html"
-        class="section-link"
-      >
-        VIEW_ALL →
-      </a>
-
-
+      <div class="window-title">developer.java</div>
+      <div class="window-status">● LIVE</div>
     </div>
-
-
-
-    <div class="activity-list">
-
-
-      <a
-        href="tech.html"
-        class="activity-item"
-      >
-
-        <time>
-          09.13
-        </time>
-
-        <div>
-
-          <span class="activity-type">
-            TECH
-          </span>
-
-          <h3>
-            BLOG SYSTEM INITIALIZED
-          </h3>
-
-          <p>
-            开始搭建属于自己的个人博客系统。
-          </p>
-
-        </div>
-
-        <span class="activity-arrow">
-          →
-        </span>
-
-      </a>
-
-
-
-      <a
-        href="tech.html"
-        class="activity-item"
-      >
-
-        <time>
-          09.12
-        </time>
-
-        <div>
-
-          <span class="activity-type">
-            JAVA
-          </span>
-
-          <h3>
-            JAVA LEARNING
-          </h3>
-
-          <p>
-            每天留一点时间写代码，比收藏一堆教程更重要。
-          </p>
-
-        </div>
-
-        <span class="activity-arrow">
-          →
-        </span>
-
-      </a>
-
-
-
-      <a
-        href="life.html"
-        class="activity-item"
-      >
-
-        <time>
-          09.10
-        </time>
-
-        <div>
-
-          <span class="activity-type">
-            LIFE
-          </span>
-
-          <h3>
-            NEW BEGINNING
-          </h3>
-
-          <p>
-            把学习过程记录下来，看看一年后的自己会走到哪里。
-          </p>
-
-        </div>
-
-        <span class="activity-arrow">
-          →
-        </span>
-
-      </a>
-
-
+    <div class="code-content">
+      <div class="code-line">
+        <span class="line-number">01</span>
+        <span class="code-purple">public class</span>
+        <span class="code-cyan"> Developer</span> {
+      </div>
+      <div class="code-line">
+        <span class="line-number">02</span>
+      </div>
+      <div class="code-line indent">
+        <span class="line-number">03</span>
+        <span class="code-purple">String</span> name = <span class="code-green">"一颗新星"</span>;
+      </div>
+      <div class="code-line indent">
+        <span class="line-number">04</span>
+        <span class="code-purple">String</span> major = <span class="code-green">"Software Engineering"</span>;
+      </div>
+      <div class="code-line indent">
+        <span class="line-number">05</span>
+        <span class="code-purple">String</span> language = <span class="code-green">"Java"</span>;
+      </div>
+      <div class="code-line">
+        <span class="line-number">06</span>
+      </div>
+      <div class="code-line indent">
+        <span class="line-number">07</span>
+        <span class="code-purple">void</span> learning() {
+      </div>
+      <div class="code-line indent-2">
+        <span class="line-number">08</span>
+        System.out.println( <span class="code-green">"Keep learning..."</span> );
+      </div>
+      <div class="code-line indent">
+        <span class="line-number">09</span>
+        }
+      </div>
+      <div class="code-line">
+        <span class="line-number">10</span>
+      </div>
+      <div class="code-line">
+        <span class="line-number">11</span>
+        }
+      </div>
+      <div class="code-cursor">▌</div>
     </div>
+    <div class="code-footer">
+      <span>UTF-8</span>
+      <span>JAVA</span>
+      <span>LF</span>
+      <span class="code-footer-online">● ONLINE</span>
+    </div>
+  </div>
+</section>
 
-  </section>
+<!-- 系统状态面板 -->
+<div class="system-panel">
+  <div class="system-panel-inner">
+    <div class="system-item">
+      <div class="system-label">SYSTEM</div>
+      <strong>ONLINE</strong>
+    </div>
+    <div class="system-item">
+      <div class="system-label">CURRENT_MODE</div>
+      <strong>LEARNING</strong>
+    </div>
+    <div class="system-item">
+      <div class="system-label">PRIMARY_LANG</div>
+      <strong>JAVA</strong>
+    </div>
+    <div class="system-item">
+      <div class="system-label">STATUS</div>
+      <strong>KEEP BUILDING</strong>
+    </div>
+  </div>
+</div>
 
+<!-- 数据统计 -->
+<div class="stats">
+  <div class="stat">
+    <strong>01</strong>
+    <span>JAVA LEARNING</span>
+  </div>
+  <div class="stat">
+    <strong>02</strong>
+    <span>PROJECTS</span>
+  </div>
+  <div class="stat">
+    <strong>03</strong>
+    <span>UNIVERSITY</span>
+  </div>
+  <div class="stat">
+    <strong>∞</strong>
+    <span>KEEP GROWING</span>
+  </div>
+</div>
 
-
-  <!-- ==================================================
-       About Preview
-  ================================================== -->
-
-  <section class="about-preview">
-
-
+<!-- 预览卡片 -->
+<section class="section">
+  <div class="section-head">
     <div>
-
-      <p class="eyebrow">
-        03 // USER_PROFILE
-      </p>
-
-      <h2>
-
-        HELLO,<br>
-
-        I'M<br>
-
-        <span>
-          一颗新星.
-        </span>
-
-      </h2>
-
+      <div class="eyebrow">01 // SYSTEM PREVIEW</div>
+      <h2>BUILDING MY OWN WORLD</h2>
     </div>
+    <span>正在构建</span>
+  </div>
 
+  <div class="preview-grid">
+    <div class="preview-card">
+      <div class="preview-number">001</div>
+      <div class="preview-tag">BLOG</div>
+      <h3>学习日志</h3>
+      <p>记录 Java、C、软件工程以及项目实践。</p>
+      <a href="blog.html" class="preview-link">&gt; OPEN_BLOG</a>
+    </div>
+    <div class="preview-card">
+      <div class="preview-number">002</div>
+      <div class="preview-tag">MOMENTS</div>
+      <h3>朋友圈</h3>
+      <p>记录技术学习，也记录生活中的普通瞬间。</p>
+      <a href="moments.html" class="preview-link">&gt; OPEN_MOMENTS</a>
+    </div>
+    <div class="preview-card">
+      <div class="preview-number">003</div>
+      <div class="preview-tag">RESUME</div>
+      <h3>我的简历</h3>
+      <p>查看我的学习经历、技能、项目和未来方向。</p>
+      <a href="resume.html" class="preview-link">&gt; OPEN_RESUME</a>
+    </div>
+  </div>
+</section>
 
+<!-- 最近动态 -->
+<section class="section activity-section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">02 // ACTIVITY</div>
+      <h2>最近动态</h2>
+    </div>
+    <a href="moments.html" class="section-link">VIEW_ALL →</a>
+  </div>
 
-    <div class="about-preview-copy">
-
-
-      <div class="terminal-box">
-
-
-        <p>
-
-          <span class="green">
-            &gt;
-          </span>
-
-          system.user
-
-        </p>
-
-
-        <p>
-
-          <span class="green">
-            &gt;
-          </span>
-
-          software_engineering_student
-
-        </p>
-
-
-        <p>
-
-          <span class="green">
-            &gt;
-          </span>
-
-          java.learner
-
-        </p>
-
-
-        <p>
-
-          <span class="green">
-            &gt;
-          </span>
-
-          future.developer
-
-        </p>
-
-
-        <p>
-
-          <span class="green">
-            &gt;
-          </span>
-
-          status: learning
-
-        </p>
-
-
+  <div class="activity-list">
+    <div class="activity-item">
+      <time>09.13</time>
+      <div>
+        <div class="activity-type">TECH</div>
+        <h3>BLOG SYSTEM INITIALIZED</h3>
+        <p>开始搭建属于自己的个人博客系统。</p>
       </div>
-
-
-      <p>
-
-        软件工程专业学生，目前主要学习 C 语言和 Java。
-
-      </p>
-
-
-      <p>
-
-        这个博客不会追求“看起来很厉害”，
-        而是想真实记录学习、写项目、踩坑、
-        解决问题和生活中的一些瞬间。
-
-      </p>
-
-
-      <a
-        href="about.html"
-        class="btn"
-      >
-
-        &gt; ./about-me
-
-      </a>
-
-
+      <span class="activity-arrow">→</span>
     </div>
-
-  </section>
-
-
-
-</main>
-
-
-
-<!-- ==================================================
-     Footer
-================================================== -->
-
-<footer>
-
-
-  <div class="footer-terminal">
-
-    <span>
-      root@newstar
-    </span>
-
-    :~$
-
-    connection established
-
-    <span class="footer-cursor">
-      █
-    </span>
-
+    <div class="activity-item">
+      <time>09.12</time>
+      <div>
+        <div class="activity-type">JAVA</div>
+        <h3>JAVA LEARNING</h3>
+        <p>每天留一点时间写代码，比收藏一堆教程更重要。</p>
+      </div>
+      <span class="activity-arrow">→</span>
+    </div>
+    <div class="activity-item">
+      <time>09.10</time>
+      <div>
+        <div class="activity-type">LIFE</div>
+        <h3>NEW BEGINNING</h3>
+        <p>把学习过程记录下来，看看一年后的自己会走到哪里。</p>
+      </div>
+      <span class="activity-arrow">→</span>
+    </div>
   </div>
+</section>
 
-
+<!-- 关于预览 -->
+<section class="about-preview">
   <div>
-
-    © 2026 一颗新星 ·
-
-    <span>
-      KEEP BUILDING ✦
-    </span>
-
+    <div class="eyebrow">03 // USER_PROFILE</div>
+    <h2>HELLO,<br>I'M <span>一颗新星.</span></h2>
   </div>
+  <div class="about-preview-copy">
+    <div class="terminal-box">
+      <p><span class="green">&gt;</span> system.user</p>
+      <p><span class="green">&gt;</span> software_engineering_student</p>
+      <p><span class="green">&gt;</span> java.learner</p>
+      <p><span class="green">&gt;</span> future.developer</p>
+      <p><span class="green">&gt;</span> status: learning</p>
+    </div>
+    <p>软件工程专业学生，目前主要学习 C 语言和 Java。</p>
+    <p>这个博客不会追求“看起来很厉害”，而是想真实记录学习、写项目、踩坑、解决问题和生活中的一些瞬间。</p>
+    <a href="about.html" class="btn">&gt; ./about-me</a>
+  </div>
+</section>
 
-
+<!-- 页脚 -->
+<footer>
+  <div class="footer-terminal">
+    <span>root@newstar</span>:~$ connection established <span class="footer-cursor">█</span>
+  </div>
+  <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
 </footer>
 
-
-
 </body>
-
 </html>
-```
