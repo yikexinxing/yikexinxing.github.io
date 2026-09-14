@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Java 学习路线：从基础到项目 · 一颗新星</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/assets/extra.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <span class="status-dot"></span>
+      <span class="sys-version">NEWSTAR_OS v2.0</span>
+    </div>
+    <div class="top-bar-right">
+      <span class="sys-time" id="sysTime">00:00:00</span>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="/index.html" class="brand"><span class="brand-symbol">✦</span><span class="brand-name">一颗新星</span></a>
+    <ul class="nav-links">
+      <li><a href="/blog.html">博客</a></li>
+      <li><a href="/moments.html">朋友圈</a></li>
+      <li><a href="/about.html">关于</a></li>
+    </ul>
+  </nav>
+
+  <main class="post-content page-content">
+    <div class="page-head">
+      <div class="section-tag">JAVA · 2026.09.13</div>
+      <h1 class="page-title">我的 Java 学习路线：从基础到项目</h1>
+      <p class="page-subtitle">把 Java 拆成一条可执行的路线：语法 → 面向对象 → 集合 → 并发 → Web。</p>
+    </div>
+
+    <article>
+      <h2>为什么要有路线</h2>
+      <p>没有方向的学习效率很低……（示例文章正文，按需扩展）</p>
+
+      <h2>建议的学习阶段</h2>
+      <ol>
+        <li>基础语法、IDE 使用、调试</li>
+        <li>面向对象与设计思想</li>
+        <li>集合、IO、异常处理</li>
+        <li>数据库与 JDBC</li>
+        <li>Web 基础、Servlet、Spring 入门</li>
+        <li>项目实践：小型博客/TODO 应用</li>
+      </ol>
+    </article>
+
+    <a href="/blog.html" class="btn">&lt; 返回列表</a>
+  </main>
+
+  <script src="/assets/site.js"></script>
+  <script>
+    // sys time
+    function updateTime(){document.getElementById('sysTime').textContent=(new Date()).toTimeString().slice(0,8);} 
+    setInterval(updateTime,1000); updateTime();
+  </script>
+</body>
+</html>
