@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>技术学习记录 · 一颗新星 CYBER BLOG</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <title>技术学习记录 · 一颗新星</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/extra.css">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
   <div class="top-bar-left">
     <span class="status-dot"></span>
     <span class="sys-version">NEWSTAR_OS v2.0</span>
-    <span class="sys-path">:: NODE://NEWSTAR.BLOG/TECH</span>
+    <span class="sys-path">:: NODE://NEWSTAR.BLOG/MOMENTS/TECH</span>
   </div>
   <div class="top-bar-right">
     <span class="sys-signal">SIG ▮▮▯▯</span>
@@ -25,106 +25,51 @@
 </header>
 
 <nav class="nav">
-  <a href="index.html" class="brand">
-    <span class="brand-symbol">✦</span>
-    <span class="brand-name">一颗新星</span>
-  </a>
+  <a href="index.html" class="brand"><span class="brand-symbol">✦</span><span class="brand-name">一颗新星</span></a>
   <ul class="nav-links">
     <li><a href="index.html">首页</a></li>
     <li><a href="blog.html">博客</a></li>
     <li class="nav-dropdown">
-      <a href="moments.html" class="dropdown-trigger">
-        朋友圈
-        <span class="dropdown-arrow">⌄</span>
-      </a>
+      <a href="moments.html" class="dropdown-trigger">朋友圈 <span class="dropdown-arrow">⌄</span></a>
       <ul class="dropdown-menu">
-        <li><a href="tech.html" class="active"><span class="dropdown-icon">&gt;_</span>技术学习记录</a></li>
+        <li><a href="tech.html"><span class="dropdown-icon">&gt;_</span>技术学习记录</a></li>
         <li><a href="life.html"><span class="dropdown-icon">◇</span>日常生活记录</a></li>
       </ul>
     </li>
-    <li><a href="resume.html">简历</a></li>
-    <li><a href="links.html">友链</a></li>
-    <li><a href="tools.html">工具</a></li>
-    <li><a href="about.html">关于</a></li>
   </ul>
 </nav>
 
 <main class="page-content">
   <div class="page-head">
-    <div class="section-tag">02.1 // TECH LOG</div>
-    <h1 class="page-title">技术<span>学习记录</span></h1>
-    <p class="page-subtitle">每天的学习、踩坑、解决问题，都记在这里。</p>
+    <div class="section-tag">TECH // 学习记录</div>
+    <h1 class="page-title">技术学习记录</h1>
+    <p class="page-subtitle">把每一次学习和实践记录下来，方便回顾与复盘。</p>
   </div>
 
-  <div class="terminal-box">
-    <p><span class="green">&gt;</span> cat /var/log/tech_learning.log</p>
-    <p><span class="green">&gt;</span> tail -n 4 · 最近四条记录</p>
-  </div>
+  <section class="article-section">
+    <div class="article-list">
+      <a href="posts/java-learning.html" class="article-card">
+        <div class="article-meta-top"><span class="article-tag">[JAVA]</span><span class="article-date">2026.09.13</span></div>
+        <h3>Java 学习路线（更新）</h3>
+        <p>把学习拆成阶段，并给每个阶段设定可交付的小项目。</p>
+        <div class="article-link">&gt; READ_MORE</div>
+      </a>
 
-  <div class="activity-list">
-    <div class="activity-item">
-       <time>09.13</time>
-      <div>
-        <div class="activity-type">BLOG</div>
-        <h3>java的学习</h3>
-        <p>学了一下午，终于要把Java学完了。</p>
-      </div>
-      <span class="activity-arrow">→</span>
+      <a href="posts/pointers-arrays.html" class="article-card">
+        <div class="article-meta-top"><span class="article-tag">[C]</span><span class="article-date">2026.09.08</span></div>
+        <h3>指针与数组笔记</h3>
+        <p>短文：理解地址偏移的关键点。</p>
+        <div class="article-link">&gt; READ_MORE</div>
+      </a>
+
     </div>
-    <div class="activity-item">
-      <time>09.13</time>
-      <div>
-        <div class="activity-type">BLOG</div>
-        <h3>完成博客全站赛博化改造</h3>
-        <p>导航、下拉、首页、子页面统一换成赛博编程风格，性能同步优化。</p>
-      </div>
-      <span class="activity-arrow">→</span>
-    </div>
-    <div class="activity-item">
-      <time>09.12</time>
-      <div>
-        <div class="activity-type">JAVA</div>
-        <h3>面向对象编程复习</h3>
-        <p>封装、继承、多态，重新整理了接口和抽象类的区别。</p>
-      </div>
-      <span class="activity-arrow">→</span>
-    </div>
-    <div class="activity-item">
-      <time>09.11</time>
-      <div>
-        <div class="activity-type">C</div>
-        <h3>指针与数组练习</h3>
-        <p>写了几个指针操作数组的小例子，终于理解了地址偏移。</p>
-      </div>
-      <span class="activity-arrow">→</span>
-    </div>
-    <div class="activity-item">
-      <time>09.10</time>
-      <div>
-        <div class="activity-type">DATA</div>
-        <h3>数据结构：链表与队列</h3>
-        <p>用 Java 手写了一遍单链表和循环队列的实现。</p>
-      </div>
-      <span class="activity-arrow">→</span>
-    </div>
-  </div>
+  </section>
 </main>
 
 <footer>
-  <div class="footer-terminal">
-    <span>root@newstar</span>:~$ connection established <span class="footer-cursor">█</span>
-  </div>
-  <div>© 2026 一颗新星 · <span>KEEP BUILDING ✦</span></div>
+  <div class="footer-terminal"> <span>root@newstar</span>:~$ <span class="footer-cursor">█</span></div>
 </footer>
 
-<script>
-  function updateTime() {
-    var now = new Date();
-    document.getElementById('sysTime').textContent = now.toTimeString().slice(0, 8);
-  }
-  setInterval(updateTime, 1000);
-  updateTime();
-</script>
-
+<script src="assets/site.js"></script>
 </body>
 </html>

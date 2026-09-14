@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="/assets/extra.css" />
 </head>
 <body>
-  <!-- header/nav 与其他 post 相同 -->
   <header class="top-bar"><div class="top-bar-left"><span class="status-dot"></span></div></header>
   <nav class="nav"><a href="/index.html" class="brand"><span class="brand-symbol">✦</span><span class="brand-name">一颗新星</span></a></nav>
 
@@ -19,11 +18,25 @@
       <p class="page-subtitle">从浅色到赛博终端风格的改造思路与实现细节。</p>
     </div>
 
+    <div class="post-meta">
+      <div>作者：一颗新星</div>
+      <div>阅读时间：约 4 分钟</div>
+      <div class="post-tags"><span>前端</span><span>设计</span></div>
+    </div>
+
     <article>
-      <h2>目标</h2>
-      <p>提升视觉感与可读性，减少不必要的资源请求，优先客户端性能。</p>
-      <h2>实现细节</h2>
-      <p>简化字体、减少图片依赖、使用 CSS 动画替代大型脚本等。</p>
+      <h2>动机</h2>
+      <p>想让博客更有个性、可读性更好，并尽量减少外部资源以提高加载速度。</p>
+
+      <h2>实现要点</h2>
+      <ul>
+        <li>减少图片，使用 CSS 生成视觉元素（星号、网格、扫描线）。</li>
+        <li>使用单个 style.css + extra.css 管理样式，避免多个重叠文件。</li>
+        <li>交互用轻量级的 vanilla JS（assets/site.js），避免大型框架。</li>
+      </ul>
+
+      <h2>细节</h2>
+      <p>把文章卡做成可点的链接、提供客户端搜索、在移动端用 .open 类控制下拉展开。整体布局采用两栏网格，侧边栏放置作者信息与最新动态。</p>
     </article>
 
     <a href="/blog.html" class="btn">&lt; 返回列表</a>

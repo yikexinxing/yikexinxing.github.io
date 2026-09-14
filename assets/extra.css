@@ -18,3 +18,28 @@
 }
 .activity-item:hover { background: rgba(0,255,255,0.03); }
 .article-link { cursor: pointer; color: var(--cyan); }
+
+/* 支持通过 .open 类来强制显示下拉（用于移动端点击展开） */
+.nav-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* 允许 dropdown-trigger 在被点击/打开时有焦点样式 */
+.dropdown-trigger[aria-expanded="true"] {
+  color: var(--cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+/* 简单的文章元信息样式 */
+.post-meta {
+  display: flex;
+  gap: 16px;
+  color: var(--text-dim);
+  font-family: Consolas, monospace;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.post-tags { display: flex; gap: 8px; }
+.post-tags span { padding: 6px 10px; border: 1px solid var(--border); color: var(--cyan); font-size:12px; }

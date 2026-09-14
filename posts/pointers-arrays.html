@@ -17,8 +17,23 @@
       <h1 class="page-title">指针与数组：终于理解了地址偏移</h1>
     </div>
 
+    <div class="post-meta">
+      <div>作者：一颗新星</div>
+      <div>阅读时间：约 3 分钟</div>
+      <div class="post-tags"><span>C</span><span>指针</span></div>
+    </div>
+
     <article>
-      <p>通过示例代码解释地址计算与数组迭代的本质。</p>
+      <h2>核心思想</h2>
+      <p>数组名在大多数表达式中会退化为指针，指针运算本质是按元素大小进行地址偏移。理解地址偏移能帮助你写出更高效的 C 代码并排查内存错误。</p>
+
+      <h2>例子</h2>
+      <pre style="background:rgba(0,0,0,0.06);padding:12px;border-radius:6px;">int arr[3] = {10,20,30};
+int *p = arr; // 指向 arr[0]
+// p + 1 指向 arr[1] 的地址（偏移 sizeof(int)）
+</pre>
+
+      <p>更多内容可以在未来的文章中扩展为完整笔记。</p>
     </article>
 
     <a href="/blog.html" class="btn">&lt; 返回列表</a>
