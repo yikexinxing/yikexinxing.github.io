@@ -17,7 +17,22 @@
   color: inherit;
 }
 .activity-item:hover { background: rgba(0,255,255,0.03); }
-.article-link { cursor: pointer; color: var(--cyan); }
+.article-link { cursor: pointer; color: var(--cyan); font-family: Consolas, monospace; font-weight:600; font-size:13px; position:relative; display:inline-flex; align-items:center; gap:8px; }
+.article-link .arrow { transition: transform .18s ease; }
+.article-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
+}
+.article-link:hover::before { transform: scaleX(1); }
+.article-link:hover .arrow { transform: translateX(4px); }
 
 /* 支持通过 .open 类来强制显示下拉（用于移动端点击展开） */
 .nav-dropdown.open .dropdown-menu {
