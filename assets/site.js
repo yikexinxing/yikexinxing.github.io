@@ -1,11 +1,16 @@
-// 全站交互脚本：使 dropdown 点击可导航、文章卡可点、添加客户端搜索、活动项点击等
+// 全站交互脚本：使 dropdown 点击不导航（保持 hover 行为），文章卡可点、添加客户端搜索、活动项点击等
 document.addEventListener('DOMContentLoaded', function () {
-  // 1) 使 dropdown 点击时导航（保留 hover 下拉）
+  // 1) 禁止 dropdown-trigger 的默认导航行为（用户要求点击“朋友圈”不跳转）
   document.querySelectorAll('.dropdown-trigger').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      // 如果用户点击的是下拉箭头或想要打开菜单，这里仍直接导航（简单可靠）
-      if (this.href) {
-        window.location.href = this.href;
+      // 阻止链接导航，保持 hover 下拉菜单的原始行为
+      e.preventDefault();
+      // 为可选的无障碍/移动设备支持，切换一个 open 类以便 CSS 可以在需要时显示菜单
+      var parent = this.closest('.nav-dropdown');
+      if (parent) {
+        parent.classList.toggle('open');
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', (!expanded).toString());
       }
     });
   });
