@@ -1,53 +1,11 @@
-// 全站交互脚本：使 dropdown 点击不导航（保持 hover 行为），文章卡可点、添加客户端搜索、活动项点击等
-document.addEventListener('DOMContentLoaded', function () {
-  // 1) 禁止 dropdown-trigger 的默认导航行为（用户要求点击“朋友圈”不跳转）
-  document.querySelectorAll('.dropdown-trigger').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      // 阻止链接导航，保持 hover 下拉菜单的原始行为
-      e.preventDefault();
-      // 为可选的无障碍/移动设备支持，切换一个 open 类以便 CSS 可以在需要时显示菜单
-      var parent = this.closest('.nav-dropdown');
-      if (parent) {
-        parent.classList.toggle('open');
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', (!expanded).toString());
-      }
-    });
-  });
-
-  // 2) 使整张 article-card 可点击（对 <a> 不需要额外处理）
-  document.querySelectorAll('.article-card').forEach(function (card) {
-    // 如果卡片是 <a>，浏览器会自动处理；为了兼容，也支持点击内部 .article-link 跳转
-    card.addEventListener('click', function (e) {
-      var link = this.getAttribute('href') || this.dataset.href;
-      if (link) {
-        // 点击 READ_MORE 也会触发此处，直接导航
-        window.location.href = link;
-      }
-    });
-  });
-
-  // 3) 客户端搜索：根据标题/内容过滤 article-card（简单即时搜索）
-  var searchInput = document.getElementById('globalSearch');
-  var searchBtn = document.getElementById('searchBtn');
-  if (searchInput && searchBtn) {
-    searchBtn.addEventListener('click', function () {
-      var q = searchInput.value.trim().toLowerCase();
-      var cards = document.querySelectorAll('.article-list .article-card');
-      cards.forEach(function (c) {
-        var text = (c.textContent || '').toLowerCase();
-        c.style.display = q === '' || text.indexOf(q) !== -1 ? '' : 'none';
-      });
-    });
-    // 回车触发搜索
-    searchInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') searchBtn.click();
-    });
-  }
-
-  // 4) 小的无障碍改进：为所有 article-link 添加 role/aria
-  document.querySelectorAll('.article-link').forEach(function (el) {
-    el.setAttribute('role', 'link');
-    el.setAttribute('aria-label', (el.closest('.article-card')?.querySelector('h3')?.textContent || 'article') + ' 阅读更多');
-  });
-});
+(function () {
+  'use strict';
+  function qs(selector, root) { return (root || document).querySelector(selector); }
+  function updateTime() { var el = qs('#sysTime'); if (el) el.textContent = new Date().toTimeString().slice(0, 8); }
+  function escapeHTML(value) { return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
+  function card(post) { return '<a class="article-card" href="article.html?id=' + encodeURIComponent(post.id) + '"><div class="article-meta-top"><span class="article-tag">[ ' + escapeHTML(post.category) + ' ]</span><time class="article-date" datetime="' + escapeHTML(post.date) + '">' + escapeHTML(post.date.replace(/-/g,'.')) + '</time></div><h3>' + escapeHTML(post.title) + '</h3><p>' + escapeHTML(post.excerpt) + '</p><div class="article-link">&gt; READ_MORE</div></a>'; }
+  function render(list, container, empty, query) { if (!container) return; var q = (query || '').trim().toLowerCase(); var filtered = list.filter(function (p) { return !q || [p.title,p.excerpt,p.category].concat(p.tags || []).join(' ').toLowerCase().indexOf(q) !== -1; }); container.innerHTML = filtered.map(card).join(''); if (empty) empty.hidden = filtered.length !== 0; }
+  function initNav() { var toggle=qs('.nav-toggle'), links=qs('#navLinks'); if (toggle && links) toggle.addEventListener('click',function(){var open=links.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));}); document.querySelectorAll('.dropdown-trigger').forEach(function(a){a.addEventListener('click',function(e){if(window.matchMedia('(max-width: 800px)').matches){e.preventDefault();var item=a.closest('.nav-dropdown'),open=item.classList.toggle('open');a.setAttribute('aria-expanded',String(open));}});}); }
+  function initSearch(form, input, container, empty) { if (!form || !input || !container) return; var run=function(){render(window.NEWSTAR_POSTS || [],container,empty,input.value);}; form.addEventListener('submit',function(e){e.preventDefault();run();}); input.addEventListener('input',run); run(); }
+  document.addEventListener('DOMContentLoaded', function () { updateTime(); window.setInterval(updateTime, 1000); initNav(); var posts=window.NEWSTAR_POSTS || []; var count=qs('#postCount'); if(count) count.textContent=String(posts.length).padStart(2,'0'); initSearch(qs('#globalSearchForm'),qs('#globalSearch'),qs('#homeArticles'),qs('#homeEmpty')); initSearch(qs('#blogSearchForm'),qs('#blogSearch'),qs('#blogArticles'),qs('#blogEmpty')); });
+}());
