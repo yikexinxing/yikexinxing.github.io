@@ -4,6 +4,20 @@
 /* 导航栏：链接/按钮被点击或被 Tab 选中时都不画框（用户要求无框）。
    选择器特意带上 .nav-links / .brand / .nav-toggle 提高优先级，
    否则会被上面的 :focus-visible 青色轮廓覆盖。 */
+/* 全站兜底：任何链接/按钮在任何情况下（鼠标点击、Tab 选中、程序触发 focus）
+   都不显示浏览器焦点框。前面已用高优先级选择器覆盖导航栏，这里再全局兜一层，
+   防止某些浏览器把鼠标点击也判定为 :focus-visible 而画框。 */
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible,
+[role="button"]:focus,
+[role="button"]:focus-visible,
+[tabindex]:focus,
+[tabindex]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
 .nav-links a:focus,
 .nav-links a:focus-visible,
 .nav-links button:focus,
