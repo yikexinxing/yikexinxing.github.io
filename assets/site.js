@@ -99,8 +99,21 @@
     updateTime();
     window.setInterval(updateTime, 1000);
     initNavigation();
+    var posts = window.NEWSTAR_POSTS || [];
     var count = qs('#postCount');
-    if (count) count.textContent = String((window.NEWSTAR_POSTS || []).length).padStart(2, '0');
+    if (count) count.textContent = String(posts.length).padStart(2, '0');
+    var catCount = qs('#categoryCount');
+    if (catCount) {
+      var cats = {};
+      posts.forEach(function (post) { cats[post.category || 'POST'] = 1; });
+      catCount.textContent = String(Object.keys(cats).length).padStart(2, '0');
+    }
+    var dayCount = qs('#dayCount');
+    if (dayCount) {
+      var start = new Date(window.NEWSTAR_SITE_START || '2026-09-08T00:00:00');
+      var days = Math.floor((Date.now() - start.getTime()) / 86400000) + 1;
+      dayCount.textContent = String(days > 0 ? days : 1);
+    }
     initSearch(qs('#globalSearchForm'), qs('#globalSearch'), qs('#homeArticles'), qs('#homeEmpty'));
     initSearch(qs('#blogSearchForm'), qs('#blogSearch'), qs('#blogArticles'), qs('#blogEmpty'));
     initCategoryList();

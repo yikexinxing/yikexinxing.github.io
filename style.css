@@ -77,6 +77,27 @@ a {
   text-decoration: none;
 }
 
+/* 鼠标点击后不显示浏览器默认焦点框（深色背景下表现为一圈白框）。
+   键盘 Tab 导航的青色焦点环仍在 upgrade.css 的 :focus-visible 中保留，不影响无障碍。 */
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+a,
+button,
+input,
+textarea,
+select,
+summary,
+[tabindex] {
+  -webkit-tap-highlight-color: transparent;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 /* ===== 顶部状态栏 ===== */
 .top-bar {
   height: 34px;
@@ -533,9 +554,12 @@ a {
   width: 200px;
   font-family: Consolas, monospace;
 }
-.search-box input:focus {
-  border-color: var(--cyan);
-  box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+.search-box input:focus,
+.page-search input:focus,
+.search-box input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--border);
 }
 .search-box button {
   padding: 9px 16px;
