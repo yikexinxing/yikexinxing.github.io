@@ -7,11 +7,11 @@
   // ===== 可调参数 =====
   var CONFIG = {
     ballSize: 9,        // 小球直径(px)
-    haloSize: 24,       // 外层阴影圈直径(px)
+    haloSize: 12,       // 外层阴影圈直径(px)
     ballColor: '#3b82f6',
     haloColor: '59,130,246',
-    ballLerp: 0.35,     // 小球跟随速度(0~1，越大越贴手)
-    haloLerp: 0.16,     // 阴影跟随速度，越小拖动感越强
+    ballLerp: 1,     // 小球跟随速度(0~1，越大越贴手)
+    haloLerp: 1,     // 阴影跟随速度，越小拖动感越强
     hoverTargets: 'a,button,[role="button"],input,select,summary'
   };
 

@@ -117,5 +117,22 @@
     initSearch(qs('#globalSearchForm'), qs('#globalSearch'), qs('#homeArticles'), qs('#homeEmpty'));
     initSearch(qs('#blogSearchForm'), qs('#blogSearch'), qs('#blogArticles'), qs('#blogEmpty'));
     initCategoryList();
+    initVideoBackground();
   });
+
+  // 背景视频：系统开启「减弱动效」或省电模式时不自动播放，只显示静态封面
+  function initVideoBackground() {
+    var video = qs('.video-bg video');
+    if (!video) return;
+    try {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) {
+        video.removeAttribute('autoplay');
+        video.pause();
+        return;
+      }
+    } catch (e) {}
+    var play = video.play();
+    if (play && typeof play.catch === 'function') play.catch(function () {});
+  }
 }());

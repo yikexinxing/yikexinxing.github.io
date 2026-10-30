@@ -1,0 +1,101 @@
+/* =========================================================
+   动态视频背景：固定在视口底层，滚动不移动
+   ========================================================= */
+
+/* 视频层：铺满视口并固定 */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -6;              /* 在内容之下、在 body 背景之上 */
+  overflow: hidden;
+  background: #020a18 url("bg-poster.jpg") center / cover no-repeat;
+  pointer-events: none;
+}
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* 不变形铺满 */
+  display: block;
+}
+
+/* 渐变遮罩：压暗视频，保证正文与标题可读 */
+.video-mask {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(130% 100% at 50% 0%,
+      rgba(2, 10, 24, 0.30) 0%,
+      rgba(2, 10, 24, 0.62) 55%,
+      rgba(2, 10, 24, 0.88) 100%),
+    linear-gradient(180deg,
+      rgba(2, 10, 24, 0.74) 0%,
+      rgba(2, 10, 24, 0.46) 34%,
+      rgba(2, 10, 24, 0.52) 62%,
+      rgba(2, 10, 24, 0.90) 100%);
+}
+/* 顶部导航条区域额外加深，菜单文字更清晰 */
+.video-mask::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 160px;
+  background: linear-gradient(180deg, rgba(2, 10, 24, 0.82), rgba(2, 10, 24, 0));
+}
+
+/* 网格与扫描线保留在视频之上，维持赛博质感 */
+.bg-grid { opacity: 0.5; }
+.bg-scanline { opacity: 0.35; }
+
+/* ===== 内容卡片：毛玻璃浮在视频上 ===== */
+.article-section,
+.sidebar-card,
+.article-card,
+.banner-box,
+.post-toc,
+.grid-cards > *,
+.info-section,
+.terminal-box,
+.activity-list,
+.timeline-item,
+.post-content article,
+.search-box,
+.page-search {
+  background-color: rgba(6, 18, 34, 0.52);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  backdrop-filter: blur(14px) saturate(120%);
+}
+
+/* 顶栏与导航也稍微透光，避免和视频割裂 */
+.top-bar,
+.nav {
+  background-color: rgba(2, 10, 24, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.footer {
+  background-color: rgba(2, 10, 24, 0.78);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* 不支持毛玻璃的浏览器：退回更实的底色，保证文字依然清楚 */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .article-section,
+  .sidebar-card,
+  .article-card,
+  .banner-box,
+  .post-toc,
+  .grid-cards > *,
+  .info-section,
+  .terminal-box,
+  .activity-list,
+  .timeline-item,
+  .post-content article {
+    background-color: rgba(4, 14, 28, 0.88);
+  }
+}
+
+/* 系统开启「减弱动效」时用静态封面替代播放 */
+@media (prefers-reduced-motion: reduce) {
+  .video-bg video { display: none; }
+}
