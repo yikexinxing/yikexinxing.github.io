@@ -1,5 +1,6 @@
 /* =========================================================
    动态视频背景：固定在视口底层，滚动不移动
+   风格参照：动漫壁纸站 —— 首屏画面通透清晰，文字直接浮在画面上
    ========================================================= */
 
 /* 视频层：铺满视口并固定 */
@@ -18,35 +19,91 @@
   display: block;
 }
 
-/* 渐变遮罩：压暗视频，保证正文与标题可读 */
+/* 渐变遮罩：顶部（导航）与底部压暗，中段留亮让画面透出来 */
 .video-mask {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(130% 100% at 50% 0%,
-      rgba(2, 10, 24, 0.30) 0%,
-      rgba(2, 10, 24, 0.62) 55%,
-      rgba(2, 10, 24, 0.88) 100%),
+    radial-gradient(135% 95% at 50% 32%,
+      rgba(2, 10, 24, 0.04) 0%,
+      rgba(2, 10, 24, 0.26) 52%,
+      rgba(2, 10, 24, 0.66) 100%),
     linear-gradient(180deg,
-      rgba(2, 10, 24, 0.74) 0%,
-      rgba(2, 10, 24, 0.46) 34%,
-      rgba(2, 10, 24, 0.52) 62%,
-      rgba(2, 10, 24, 0.90) 100%);
+      rgba(2, 10, 24, 0.62) 0%,
+      rgba(2, 10, 24, 0.14) 20%,
+      rgba(2, 10, 24, 0.20) 48%,
+      rgba(2, 10, 24, 0.46) 76%,
+      rgba(2, 10, 24, 0.82) 100%);
 }
-/* 顶部导航条区域额外加深，菜单文字更清晰 */
+/* 顶部导航条区域加深，菜单文字更清晰 */
 .video-mask::after {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 160px;
-  background: linear-gradient(180deg, rgba(2, 10, 24, 0.82), rgba(2, 10, 24, 0));
+  height: 170px;
+  background: linear-gradient(180deg, rgba(2, 10, 24, 0.72), rgba(2, 10, 24, 0));
 }
 
-/* ===== 内容卡片：毛玻璃浮在视频上 ===== */
+/* ===== 首屏：文字直接浮在画面上，不做卡片遮挡 ===== */
+.home-banner {
+  position: relative;
+  z-index: 3;
+  min-height: calc(100vh - 300px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 24px;
+}
+/* 去掉原 banner 的面板感：无边框、无底色、无毛玻璃 */
+.banner-box {
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  max-width: 900px;
+  padding: 24px 32px;
+  text-align: center;
+}
+/* 保留四角装饰标记，维持赛博风格；没有边框后它们成了唯一的“框”暗示 */
+.banner-box::before,
+.banner-box::after {
+  opacity: 0.65;
+}
+.banner-box::before { border-width: 2px 0 0 2px; }
+.banner-box::after { border-width: 0 2px 2px 0; }
+
+/* 首屏文字：加大 + 强投影，压在任何画面上都读得清 */
+.banner-content h1 {
+  font-size: clamp(34px, 5.4vw, 64px);
+  line-height: 1.15;
+  letter-spacing: 2px;
+  text-shadow:
+    0 2px 10px rgba(0, 8, 20, 0.85),
+    0 6px 28px rgba(0, 8, 20, 0.7),
+    0 0 26px rgba(0, 229, 255, 0.28);
+}
+.banner-eyebrow {
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-shadow: 0 2px 8px rgba(0, 8, 20, 0.9), 0 0 12px rgba(0, 229, 255, 0.6);
+}
+.banner-desc {
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: rgba(233, 248, 255, 0.92);
+  text-shadow: 0 2px 10px rgba(0, 8, 20, 0.95);
+}
+/* 两侧漂浮代码：再淡一点，避免抢画面 */
+.banner-code-left,
+.banner-code-right {
+  color: rgba(0, 229, 255, 0.18);
+}
+
+/* ===== 内容卡片：毛玻璃浮在视频上（正文区保证可读） ===== */
 .article-section,
 .sidebar-card,
 .article-card,
-.banner-box,
 .post-toc,
 .grid-cards > *,
 .info-section,
@@ -56,17 +113,17 @@
 .post-content article,
 .search-box,
 .page-search {
-  background-color: rgba(6, 18, 34, 0.52);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
-  backdrop-filter: blur(14px) saturate(120%);
+  background-color: rgba(6, 18, 34, 0.5);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  backdrop-filter: blur(16px) saturate(125%);
 }
 
 /* 顶栏与导航也稍微透光，避免和视频割裂 */
 .top-bar,
 .nav {
-  background-color: rgba(2, 10, 24, 0.72);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background-color: rgba(2, 10, 24, 0.66);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 .footer {
   background-color: rgba(2, 10, 24, 0.78);
@@ -79,7 +136,6 @@
   .article-section,
   .sidebar-card,
   .article-card,
-  .banner-box,
   .post-toc,
   .grid-cards > *,
   .info-section,
@@ -89,6 +145,12 @@
   .post-content article {
     background-color: rgba(4, 14, 28, 0.88);
   }
+}
+
+/* 窄屏：首屏高度收一点，避免留白过多 */
+@media (max-width: 800px) {
+  .home-banner { min-height: auto; padding: 28px 16px 12px; }
+  .banner-box { padding: 12px 8px; }
 }
 
 /* 系统开启「减弱动效」时用静态封面替代播放 */
