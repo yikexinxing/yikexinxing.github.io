@@ -42,10 +42,6 @@
   background: linear-gradient(180deg, rgba(2, 10, 24, 0.82), rgba(2, 10, 24, 0));
 }
 
-/* 网格与扫描线保留在视频之上，维持赛博质感 */
-.bg-grid { opacity: 0.5; }
-.bg-scanline { opacity: 0.35; }
-
 /* ===== 内容卡片：毛玻璃浮在视频上 ===== */
 .article-section,
 .sidebar-card,

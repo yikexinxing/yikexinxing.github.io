@@ -40,33 +40,7 @@ body {
   --glow-green: 0 0 8px rgba(0, 255, 156, 0.7), 0 0 22px rgba(0, 255, 156, 0.25);
 }
 
-/* ===== 全局背景 ===== */
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -5;
-  background-image:
-    linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
-  background-size: 44px 44px;
-  animation: gridMove 28s linear infinite;
-  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.3));
-}
-.bg-scanline {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.015) 0px,
-    rgba(255, 255, 255, 0.015) 1px,
-    transparent 1px,
-    transparent 4px
-  );
-  opacity: 0.25;
-}
+/* 旧的网格/扫描线背景已移除，页面背景统一由 assets/video-bg.css 的视频层提供 */
 
 ::selection {
   color: #00131a;
@@ -1117,10 +1091,6 @@ footer > div:last-child span {
 /* =========================================================
    动画
 ========================================================= */
-@keyframes gridMove {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 44px 44px, 44px 44px; }
-}
 @keyframes navScan {
   0% { left: -30%; }
   100% { left: 100%; }
